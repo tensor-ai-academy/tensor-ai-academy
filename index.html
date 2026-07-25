@@ -849,100 +849,102 @@
         ================================================== -->
 
         <section
-    class="section verification-section"
-    id="verification"
->
+            class="section verification-section"
+            id="verification"
+        >
 
-    <div class="container">
+            <div class="container">
 
-        <div class="verification-card">
+                <div class="verification-card">
 
-            <div class="verification-content">
+                    <div class="verification-content">
 
-                <span
-                    class="section-label"
-                    data-i18n="verification.label"
-                >
-                    Certificate Verification
-                </span>
-
-                <h2
-                    data-i18n="verification.title"
-                >
-                    Verify an Official Tensor Academy Certificate
-                </h2>
-
-                <p
-                    data-i18n="verification.text"
-                >
-                    Enter a certificate ID to access its official verification page and review the certificate information registered in the Tensor Academy verification system.
-                </p>
+                        <span
+                            class="section-label"
+                            data-i18n="verification.label"
+                        >
+                            Certificate Verification
+                        </span>
 
 
-                <!-- CERTIFICATE SEARCH -->
-
-                <form
-                    class="certificate-search-form"
-                    id="certificate-search-form"
-                    autocomplete="off"
-                >
-
-                    <label
-                        for="certificate-id-input"
-                        class="sr-only"
-                    >
-                        Certificate ID
-                    </label>
+                        <h2
+                            data-i18n="verification.title"
+                        >
+                            Verify an Official Tensor Academy Certificate
+                        </h2>
 
 
-                    <input
-                        type="text"
-                        id="certificate-id-input"
-                        class="certificate-id-input"
-                        placeholder="Example: TA-AI-2026-MFM-2198-AF"
-                        aria-label="Certificate ID"
-                        required
-                    >
+                        <p
+                            data-i18n="verification.text"
+                        >
+                            Enter a certificate ID to access its official verification page and review the certificate information registered in the Tensor Academy verification system.
+                        </p>
 
 
-                    <button
-                        type="submit"
-                        class="button button-primary"
-                        data-i18n="verification.button"
-                    >
-                        Verify Certificate
-                    </button>
+                        <!-- CERTIFICATE SEARCH FORM -->
 
-                </form>
+                        <form
+                            class="certificate-search-form"
+                            id="certificate-search-form"
+                            autocomplete="off"
+                        >
 
-
-                <!-- SEARCH ERROR -->
-
-                <p
-                    id="verification-error"
-                    class="verification-error"
-                    role="alert"
-                    aria-live="polite"
-                ></p>
+                            <label
+                                for="certificate-id-input"
+                                class="sr-only"
+                            >
+                                Certificate ID
+                            </label>
 
 
-                <!-- DEMO / CURRENT CERTIFICATE -->
+                            <input
+                                type="text"
+                                id="certificate-id-input"
+                                class="certificate-id-input"
+                                placeholder="Example: TA-AI-2026-MFM-2198-AF"
+                                aria-label="Certificate ID"
+                                required
+                            >
 
-                <p class="verification-example">
 
-                    Example:
+                            <button
+                                type="submit"
+                                class="button button-primary"
+                                data-i18n="verification.button"
+                            >
+                                Verify Certificate
+                            </button>
 
-                    <code>
-                        TA-AI-2026-MFM-2198-AF
-                    </code>
+                        </form>
 
-                </p>
+
+                        <!-- SEARCH ERROR -->
+
+                        <p
+                            id="verification-error"
+                            class="verification-error"
+                            role="alert"
+                            aria-live="polite"
+                        ></p>
+
+
+                        <!-- EXAMPLE ID -->
+
+                        <p class="verification-example">
+
+                            Example:
+
+                            <code>
+                                TA-AI-2026-MFM-2198-AF
+                            </code>
+
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
-
-        </div>
-
-    </div>
 
         </section>
 
@@ -1196,6 +1198,7 @@
                 <p>
 
                     © 2026 Tensor Academy.
+
                     <span
                         data-i18n="footer.rights"
                     >
@@ -1238,6 +1241,14 @@
 
     <script
         src="js/i18n.js"
+        defer
+    ></script>
+
+
+    <!-- CERTIFICATE VERIFICATION SYSTEM -->
+
+    <script
+        src="js/certificate-verification.js"
         defer
     ></script>
 
