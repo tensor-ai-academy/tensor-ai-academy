@@ -849,54 +849,100 @@
         ================================================== -->
 
         <section
-            class="section verification-section"
-            id="verification"
-        >
+    class="section verification-section"
+    id="verification"
+>
 
-            <div class="container">
+    <div class="container">
 
+        <div class="verification-card">
 
-                <div class="verification-card">
+            <div class="verification-content">
 
+                <span
+                    class="section-label"
+                    data-i18n="verification.label"
+                >
+                    Certificate Verification
+                </span>
 
-                    <div class="verification-content">
+                <h2
+                    data-i18n="verification.title"
+                >
+                    Verify an Official Tensor Academy Certificate
+                </h2>
 
-
-                        <span
-                            class="section-label"
-                            data-i18n="verification.label"
-                        >
-                            Certificate Verification
-                        </span>
-
-
-                        <h2
-                            data-i18n="verification.title"
-                        >
-                            Verify an Official Tensor Academy Certificate
-                        </h2>
-
-
-                        <p
-                            data-i18n="verification.text"
-                        >
-                            Enter a certificate ID to access its official verification page and review the certificate information registered in the Tensor Academy verification system.
-                        </p>
+                <p
+                    data-i18n="verification.text"
+                >
+                    Enter a certificate ID to access its official verification page and review the certificate information registered in the Tensor Academy verification system.
+                </p>
 
 
-                        <a
-                            href="verify/certificates/TA-AI-2026-MFM-2198-AF.html"
-                            class="button button-primary"
-                            data-i18n="verification.button"
-                        >
-                            Verify Certificate
-                        </a>
+                <!-- CERTIFICATE SEARCH -->
 
-                    </div>
+                <form
+                    class="certificate-search-form"
+                    id="certificate-search-form"
+                    autocomplete="off"
+                >
 
-                </div>
+                    <label
+                        for="certificate-id-input"
+                        class="sr-only"
+                    >
+                        Certificate ID
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="certificate-id-input"
+                        class="certificate-id-input"
+                        placeholder="Example: TA-AI-2026-MFM-2198-AF"
+                        aria-label="Certificate ID"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                        data-i18n="verification.button"
+                    >
+                        Verify Certificate
+                    </button>
+
+                </form>
+
+
+                <!-- SEARCH ERROR -->
+
+                <p
+                    id="verification-error"
+                    class="verification-error"
+                    role="alert"
+                    aria-live="polite"
+                ></p>
+
+
+                <!-- DEMO / CURRENT CERTIFICATE -->
+
+                <p class="verification-example">
+
+                    Example:
+
+                    <code>
+                        TA-AI-2026-MFM-2198-AF
+                    </code>
+
+                </p>
 
             </div>
+
+        </div>
+
+    </div>
 
         </section>
 
