@@ -104,7 +104,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* RTL font adjustment */
 html[dir="rtl"] body {
   font-family: var(--font-fa);
 }
@@ -185,6 +184,9 @@ h3 {
   margin-bottom: var(--space-xl);
 }
 
+.text-center { text-align: center; }
+.text-muted { color: var(--color-text-muted); }
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
@@ -239,6 +241,10 @@ h3 {
 .btn-outline:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
+}
+
+.btn-full {
+  width: 100%;
 }
 
 .btn-icon {
@@ -662,17 +668,184 @@ h3 {
   font-size: var(--text-sm);
 }
 
-/* ---------- RTL Specific Adjustments ---------- */
+/* ============================================================
+   Verification Page Specific Styles
+   ============================================================ */
+.verify-form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--text-base);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(30, 95, 187, 0.2);
+}
+
+.verify-error {
+  color: #DC2626;
+  font-size: var(--text-sm);
+  margin-top: var(--space-sm);
+  display: none;
+}
+
+.dark .verify-error {
+  color: #FCA5A5;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ============================================================
+   Individual Certificate Page Specific Styles
+   ============================================================ */
+.certificate-page {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.cert-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.cert-logo {
+  margin-inline: auto;
+  margin-bottom: var(--space-md);
+}
+
+.cert-title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-xs);
+}
+
+.cert-id {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  background: var(--color-surface);
+  display: inline-block;
+  padding: 0.3em 1em;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.cert-body-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.cert-field {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-sm);
+}
+
+.cert-label {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.cert-value {
+  font-weight: 600;
+}
+
+.cert-achievements {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.cert-achievements ul {
+  list-style: disc;
+  padding-inline-start: 1.5rem;
+}
+
+.cert-achievements li {
+  margin-bottom: var(--space-sm);
+}
+
+.cert-image-placeholder,
+.cert-qr-placeholder {
+  margin-bottom: var(--space-2xl);
+}
+
+.placeholder-box {
+  background: var(--color-surface);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+}
+
+.cert-pdf-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-xl);
+}
+
+/* ============================================================
+   Bilingual Display Logic (lang-en / lang-fa)
+   ============================================================ */
+.lang-en, .lang-fa {
+  display: none;
+}
+
+html[lang="en"] .lang-en {
+  display: inline;
+}
+
+html[lang="fa"] .lang-fa {
+  display: inline;
+}
+
+/* ============================================================
+   RTL Specific Adjustments
+   ============================================================ */
 html[dir="rtl"] .main-nav a::after {
   left: auto;
   right: 0;
 }
 
-html[dir="rtl"] .accordion-trigger::after {
-  /* No change needed; but if we want mirror, we can */
-}
-
-/* ---------- Responsive Design (Mobile First) ---------- */
+/* ============================================================
+   Responsive Design (Mobile First)
+   ============================================================ */
 @media (max-width: 768px) {
   :root {
     --header-height: 4rem;
@@ -689,6 +862,7 @@ html[dir="rtl"] .accordion-trigger::after {
     transform: translateY(-120%);
     opacity: 0;
     transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+    z-index: 99;
   }
 
   .main-nav.open {
@@ -720,6 +894,10 @@ html[dir="rtl"] .accordion-trigger::after {
   .courses-grid {
     grid-template-columns: 1fr;
   }
+
+  .cert-body-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -728,6 +906,11 @@ html[dir="rtl"] .accordion-trigger::after {
   }
 
   .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cert-pdf-actions {
     flex-direction: column;
     align-items: center;
   }
