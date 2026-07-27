@@ -2,678 +2,139 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Read the Tensor Academy Privacy Policy covering website use, certificate verification data, contact information, local storage, and external links."
-  >
-
-  <meta
-    name="robots"
-    content="index, follow"
-  >
-
-  <link
-    rel="canonical"
-    href="https://tensor-ai-academy.github.io/tensor-ai-academy/privacy.html"
-  >
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:title"
-    content="Privacy Policy | Tensor Academy"
-  >
-
-  <meta
-    property="og:description"
-    content="Learn how Tensor Academy handles information related to website use, certificate verification, contact, language preferences, and theme preferences."
-  >
-
-  <meta
-    property="og:url"
-    content="https://tensor-ai-academy.github.io/tensor-ai-academy/privacy.html"
-  >
-
-  <meta
-    property="og:image"
-    content="assets/images/tensor-academy-logo.png"
-  >
-
-  <link
-    rel="icon"
-    type="image/png"
-    href="assets/images/tensor-academy-logo.png"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
-
-  <title>
-    Privacy Policy | Tensor Academy
-  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tensor Academy Privacy Policy — how we handle your data.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://tensor-ai-academy.github.io/tensor-ai-academy/privacy.html">
+  <title>Privacy Policy — Tensor Academy</title>
+  <link rel="icon" type="image/png" href="assets/images/tensor-academy-logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('tensor-theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
 </head>
-
 <body>
 
-  <a
-    class="skip-link"
-    href="#main-content"
-  >
-    Skip to main content
-  </a>
-
-  <header class="site-header">
-
-    <div class="container header-inner">
-
-      <a
-        class="brand"
-        href="index.html"
-        aria-label="Tensor Academy Home"
-      >
-
-        <img
-          class="brand-logo"
-          src="assets/images/tensor-academy-logo.png"
-          alt="Tensor Academy logo"
-          width="48"
-          height="48"
-        >
-
-        <span class="brand-copy">
-
-          <strong class="brand-name">
-            Tensor Academy
-          </strong>
-
-          <span class="brand-tagline">
-            Learn AI. Shape the Future.
-          </span>
-
-        </span>
-
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="logo-link" aria-label="Tensor Academy Home">
+        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="logo-img" width="48" height="48">
+        <div class="logo-text">
+          <span class="logo-name">Tensor Academy</span>
+          <span class="logo-tagline" data-i18n="tagline">Learn AI. Shape the Future.</span>
+        </div>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        data-menu-toggle
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="mobile-navigation"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </button>
-
-      <nav
-        class="desktop-navigation"
-        aria-label="Primary navigation"
-      >
-
-        <a
-          href="index.html#about"
-          data-i18n="nav.about"
-        >
-          About Tensor Academy
-        </a>
-
-        <a
-          href="index.html#courses"
-          data-i18n="nav.courses"
-        >
-          Courses
-        </a>
-
-        <a
-          href="index.html#certificates"
-          data-i18n="nav.certificates"
-        >
-          Certificates
-        </a>
-
-        <a
-          href="verify.html"
-          data-i18n="nav.verify"
-        >
-          Certificate Verification
-        </a>
-
-        <a
-          href="index.html#contact"
-          data-i18n="nav.contact"
-        >
-          Contact
-        </a>
-
-        <a
-          href="index.html#faq"
-          data-i18n="nav.faq"
-        >
-          FAQ
-        </a>
-
+      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
+          <li><a href="index.html#courses" data-i18n="nav_courses">Courses</a></li>
+          <li><a href="index.html#certificates" data-i18n="nav_certificates">Certificates</a></li>
+          <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+          <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
-
-        <button
-          class="icon-button"
-          type="button"
-          data-language-toggle
-          aria-label="Change language"
-          title="Change language"
-        >
-          <span
-            data-language-value
-            aria-hidden="true"
-          >
-            FA
-          </span>
+        <a href="verify.html" class="btn btn-outline btn-verify" data-i18n="nav_verify">Verify Certificate</a>
+        <button id="langToggle" class="btn-icon" aria-label="Switch Language" title="Switch Language">
+          <span class="lang-indicator">فا</span>
         </button>
-
-        <button
-          class="icon-button"
-          type="button"
-          data-theme-toggle
-          aria-label="Toggle color theme"
-          title="Toggle color theme"
-        >
-          <span
-            data-theme-icon
-            aria-hidden="true"
-          >
-            ☾
-          </span>
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <span class="theme-icon">🌙</span>
         </button>
-
-        <a
-          class="button button-primary header-verify-button"
-          href="verify.html"
-          data-i18n="nav.verify"
-        >
-          Certificate Verification
-        </a>
-
       </div>
 
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
-
-    <nav
-      class="mobile-navigation"
-      id="mobile-navigation"
-      data-mobile-menu
-      aria-label="Mobile navigation"
-    >
-
-      <a
-        href="index.html#about"
-        data-i18n="nav.about"
-      >
-        About Tensor Academy
-      </a>
-
-      <a
-        href="index.html#courses"
-        data-i18n="nav.courses"
-      >
-        Courses
-      </a>
-
-      <a
-        href="index.html#certificates"
-        data-i18n="nav.certificates"
-      >
-        Certificates
-      </a>
-
-      <a
-        href="verify.html"
-        data-i18n="nav.verify"
-      >
-        Certificate Verification
-      </a>
-
-      <a
-        href="index.html#contact"
-        data-i18n="nav.contact"
-      >
-        Contact
-      </a>
-
-      <a
-        href="index.html#faq"
-        data-i18n="nav.faq"
-      >
-        FAQ
-      </a>
-
-      <div class="mobile-navigation-actions">
-
-        <button
-          class="button button-secondary"
-          type="button"
-          data-language-toggle
-          aria-label="Change language"
-        >
-          <span data-language-name>
-            فارسی
-          </span>
-        </button>
-
-        <button
-          class="button button-secondary"
-          type="button"
-          data-theme-toggle
-          aria-label="Toggle color theme"
-        >
-          <span data-theme-value>
-            Dark mode
-          </span>
-        </button>
-
-      </div>
-
-    </nav>
-
   </header>
 
-  <main id="main-content">
+  <!-- Main Content -->
+  <main id="mainContent" class="policy-page section-padding">
+    <div class="container" style="max-width: 800px;">
+      <!-- English Content -->
+      <div class="lang-en">
+        <h1>Privacy Policy</h1>
+        <p><strong>Effective Date:</strong> 2026</p>
 
-    <section
-      class="page-hero section"
-      aria-labelledby="privacy-page-title"
-    >
+        <h2>1. Introduction</h2>
+        <p>Tensor Academy ("we", "our", "us") respects your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website.</p>
 
-      <div class="container">
+        <h2>2. Information We Collect</h2>
+        <h3>Certificate Verification Data</h3>
+        <p>When you verify a certificate, we process the Certificate ID you provide. We do not store this ID on our servers; it is used only to retrieve the corresponding public certificate information.</p>
+        <h3>Contact Data</h3>
+        <p>If you contact us via email or Telegram, we may retain your contact details and correspondence solely to respond to your inquiry. We do not share this information with third parties.</p>
 
-        <div
-          class="page-hero-content"
-          data-reveal
-        >
+        <h2>3. Local Storage</h2>
+        <p>Our website uses your browser's local storage to remember your language preference (English or Persian/Dari) and theme preference (light or dark). No personal data is stored in local storage, and this information is never transmitted to any server.</p>
 
-          <span class="eyebrow">
-            Website Policy
-          </span>
+        <h2>4. External Links</h2>
+        <p>Our site may contain links to external platforms (Telegram, Discord, Google Meet). We are not responsible for the privacy practices of those third-party services. Please review their privacy policies.</p>
 
-          <h1 id="privacy-page-title">
-            Privacy Policy
-          </h1>
+        <h2>5. Updates</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date.</p>
 
-          <p class="page-hero-description">
-            This Privacy Policy explains how information may be handled when you use the Tensor Academy website and its certificate verification features.
-          </p>
-
-          <p class="policy-updated">
-            Last updated: July 2026
-          </p>
-
-        </div>
-
+        <h2>6. Contact</h2>
+        <p>For any questions about this policy, contact us at <a href="mailto:tensor.ai.academy@gmail.com">tensor.ai.academy@gmail.com</a>.</p>
       </div>
 
-    </section>
+      <!-- Persian Content -->
+      <div class="lang-fa" dir="rtl">
+        <h1>سیاست حفظ حریم خصوصی</h1>
+        <p><strong>تاریخ اجرا:</strong> ۲۰۲۶</p>
 
-    <section
-      class="legal-section section"
-      aria-labelledby="privacy-content-title"
-    >
+        <h2>۱. مقدمه</h2>
+        <p>آکادمی تنسور ("ما") به حریم خصوصی شما احترام می‌گذارد. این سیاست توضیح می‌دهد که چگونه اطلاعات شخصی شما را جمع‌آوری، استفاده و محافظت می‌کنیم.</p>
 
-      <div class="container">
+        <h2>۲. اطلاعاتی که جمع‌آوری می‌کنیم</h2>
+        <h3>داده‌های تأیید گواهی‌نامه</h3>
+        <p>هنگامی که یک گواهی را تأیید می‌کنید، شناسهٔ گواهی واردشده را پردازش می‌کنیم. این شناسه را روی سرور ذخیره نمی‌کنیم؛ فقط برای بازیابی اطلاعات عمومی گواهی مربوطه استفاده می‌شود.</p>
+        <h3>داده‌های تماس</h3>
+        <p>اگر از طریق ایمیل یا تلگرام با ما تماس بگیرید، ممکن است اطلاعات تماس و مکاتبات شما را صرفاً برای پاسخ‌گویی نگهداری کنیم. این اطلاعات را با شخص ثالث به اشتراک نمی‌گذاریم.</p>
 
-        <div class="legal-layout">
+        <h2>۳. ذخیره‌سازی محلی</h2>
+        <p>وب‌سایت ما از حافظهٔ محلی مرورگر شما برای به‌خاطر سپردن ترجیح زبان (انگلیسی یا فارسی/دری) و ترجیح تم (روشن یا تاریک) استفاده می‌کند. هیچ دادهٔ شخصی در حافظهٔ محلی ذخیره نمی‌شود و این اطلاعات هرگز به هیچ سروری ارسال نمی‌شود.</p>
 
-          <aside
-            class="legal-sidebar card"
-            data-reveal
-          >
+        <h2>۴. لینک‌های خارجی</h2>
+        <p>سایت ما ممکن است حاوی لینک‌هایی به پلتفرم‌های خارجی (تلگرام، دیسکورد، گوگل میت) باشد. ما در برابر شیوه‌های حفظ حریم خصوصی آن سرویس‌های ثالث مسئولیتی نداریم. لطفاً سیاست‌های حریم خصوصی آن‌ها را مرور کنید.</p>
 
-            <nav
-              aria-label="Privacy Policy sections"
-            >
+        <h2>۵. به‌روزرسانی‌ها</h2>
+        <p>ممکن است این سیاست را هر از گاهی به‌روزرسانی کنیم. تغییرات با تاریخ اجرای جدید در این صفحه منتشر خواهند شد.</p>
 
-              <a href="#privacy">
-                Privacy
-              </a>
-
-              <a href="#certificate-data">
-                Certificate Verification Data
-              </a>
-
-              <a href="#contact-data">
-                Contact Data
-              </a>
-
-              <a href="#local-storage">
-                Local Storage
-              </a>
-
-              <a href="#external-links">
-                External Links
-              </a>
-
-              <a href="#updates">
-                Updates
-              </a>
-
-            </nav>
-
-          </aside>
-
-          <article
-            class="legal-content card"
-            data-reveal
-          >
-
-            <div
-              id="privacy"
-              class="legal-section-block"
-            >
-
-              <h2 id="privacy-content-title">
-                Privacy
-              </h2>
-
-              <p>
-                Tensor Academy respects the privacy of visitors and aims to handle information in a reasonable and transparent manner. This website is primarily an informational and educational platform for the academy and its services.
-              </p>
-
-              <p>
-                The website does not intentionally request unnecessary personal information through the public pages. Information provided voluntarily by visitors, such as when contacting the academy, is used for the purpose for which it was provided.
-              </p>
-
-            </div>
-
-            <div
-              id="certificate-data"
-              class="legal-section-block"
-            >
-
-              <h2>
-                Certificate Verification Data
-              </h2>
-
-              <p>
-                The certificate verification system allows visitors to enter a Certificate ID and access the corresponding verification page when a matching record is available.
-              </p>
-
-              <p>
-                A certificate verification page may display information associated with a certificate record, such as the certificate holder's name, certificate ID, course, level, instructor, duration, dates, score, grade, status, and listed achievements.
-              </p>
-
-              <p>
-                Only information intended to be included in the public certificate verification record should be displayed on a verification page. The structure of the system is designed to support unique Certificate IDs and dedicated verification URLs.
-              </p>
-
-            </div>
-
-            <div
-              id="contact-data"
-              class="legal-section-block"
-            >
-
-              <h2>
-                Contact Data
-              </h2>
-
-              <p>
-                If you contact Tensor Academy through the published contact methods, such as email or Telegram, you may voluntarily provide information needed to communicate with you.
-              </p>
-
-              <p>
-                Contact information is used for communication related to your inquiry or request. Visitors should avoid sending sensitive information unless it is specifically necessary for the intended communication.
-              </p>
-
-              <p>
-                The current public contact information for Tensor Academy includes:
-              </p>
-
-              <ul>
-                <li>
-                  Email:
-                  <a href="mailto:tensor.ai.academy@gmail.com">
-                    tensor.ai.academy@gmail.com
-                  </a>
-                </li>
-
-                <li>
-                  Telegram:
-                  <a
-                    href="https://t.me/Tensor_academy_maneger"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    @Tensor_academy_maneger
-                  </a>
-                </li>
-              </ul>
-
-            </div>
-
-            <div
-              id="local-storage"
-              class="legal-section-block"
-            >
-
-              <h2>
-                Local Storage for Language and Theme
-              </h2>
-
-              <p>
-                The website may use the browser's local storage feature to remember your preferred language and visual theme.
-              </p>
-
-              <p>
-                The language preference is used to remember whether you selected English or Persian / Dari. The theme preference is used to remember whether you selected Light Mode or Dark Mode.
-              </p>
-
-              <p>
-                These preferences are stored locally in your browser and are intended to improve your experience when you return to the website. They are not intended to be used as a substitute for server-side account or identity management.
-              </p>
-
-              <p>
-                You can clear locally stored website data through your browser settings. Clearing this data may reset your saved language and theme preferences.
-              </p>
-
-            </div>
-
-            <div
-              id="external-links"
-              class="legal-section-block"
-            >
-
-              <h2>
-                External Links
-              </h2>
-
-              <p>
-                The website may contain links to external services and platforms, including Telegram, Google Meet, Discord, Google Fonts, GitHub Pages, or other third-party resources.
-              </p>
-
-              <p>
-                External websites and services operate under their own terms and privacy practices. Tensor Academy does not control the privacy policies or practices of third-party websites and services.
-              </p>
-
-              <p>
-                Visitors should review the applicable policies of external services before providing personal information or using those services.
-              </p>
-
-            </div>
-
-            <div
-              id="updates"
-              class="legal-section-block"
-            >
-
-              <h2>
-                Updates to This Policy
-              </h2>
-
-              <p>
-                This Privacy Policy may be updated when the website, certificate verification system, contact methods, or related practices change.
-              </p>
-
-              <p>
-                When an update is made, the latest version will be published on this page. The date shown near the beginning of the policy may be updated to indicate when the policy was last revised.
-              </p>
-
-            </div>
-
-            <div class="legal-contact-note">
-
-              <h2>
-                Questions About Privacy
-              </h2>
-
-              <p>
-                If you have a question about this Privacy Policy or how information is handled in connection with the website, you may contact Tensor Academy using the published contact information.
-              </p>
-
-              <a
-                class="button button-secondary"
-                href="index.html#contact"
-                data-i18n="footer.contact"
-              >
-                Contact
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
-
+        <h2>۶. تماس</h2>
+        <p>برای هرگونه سوال دربارهٔ این سیاست، با ما در <a href="mailto:tensor.ai.academy@gmail.com">tensor.ai.academy@gmail.com</a> تماس بگیرید.</p>
       </div>
-
-    </section>
-
+    </div>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-
-    <div class="container">
-
-      <div class="footer-main">
-
-        <div class="footer-brand">
-
-          <a
-            class="brand"
-            href="index.html"
-            aria-label="Tensor Academy Home"
-          >
-
-            <img
-              class="brand-logo"
-              src="assets/images/tensor-academy-logo.png"
-              alt="Tensor Academy logo"
-              width="48"
-              height="48"
-            >
-
-            <span class="brand-copy">
-
-              <strong class="brand-name">
-                Tensor Academy
-              </strong>
-
-              <span class="brand-tagline">
-                Learn AI. Shape the Future.
-              </span>
-
-            </span>
-
-          </a>
-
-          <p>
-            A private online AI academy focused on practical skills, modern AI education, and future career opportunities.
-          </p>
-
-        </div>
-
-        <nav
-          class="footer-navigation"
-          aria-label="Footer navigation"
-        >
-
-          <a
-            href="privacy.html"
-            class="is-active"
-            aria-current="page"
-            data-i18n="footer.privacy"
-          >
-            Privacy Policy
-          </a>
-
-          <a
-            href="terms.html"
-            data-i18n="footer.terms"
-          >
-            Terms of Use
-          </a>
-
-          <a
-            href="verify.html"
-            data-i18n="footer.verification"
-          >
-            Certificate Verification
-          </a>
-
-          <a
-            href="index.html#contact"
-            data-i18n="footer.contact"
-          >
-            Contact
-          </a>
-
-        </nav>
-
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="footer-logo" width="40" height="40">
+        <span>Tensor Academy</span>
       </div>
-
-      <div class="footer-bottom">
-
-        <p data-i18n="footer.rights">
-          © 2026 Tensor Academy. All rights reserved.
-        </p>
-
+      <div class="footer-links">
+        <a href="verify.html" data-i18n="footer_verify">Certificate Verification</a>
+        <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="footer_terms">Terms of Use</a>
+        <a href="index.html#contact" data-i18n="footer_contact">Contact</a>
       </div>
-
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 Tensor Academy. All rights reserved.</p>
     </div>
-
   </footer>
 
-  <script
-    src="js/app.js"
-    defer
-  ></script>
-
+  <script src="js/app.js"></script>
 </body>
 </html>
