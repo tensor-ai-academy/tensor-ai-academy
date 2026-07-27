@@ -2,670 +2,109 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Verify Tensor Academy certificates online using a unique Certificate ID."
-  >
-
-  <meta
-    name="robots"
-    content="index, follow"
-  >
-
-  <link
-    rel="canonical"
-    href="https://tensor-ai-academy.github.io/tensor-ai-academy/verify.html"
-  >
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:title"
-    content="Certificate Verification | Tensor Academy"
-  >
-
-  <meta
-    property="og:description"
-    content="Verify Tensor Academy certificates online using a unique Certificate ID."
-  >
-
-  <meta
-    property="og:url"
-    content="https://tensor-ai-academy.github.io/tensor-ai-academy/verify.html"
-  >
-
-  <meta
-    property="og:image"
-    content="assets/images/tensor-academy-logo.png"
-  >
-
-  <meta
-    name="twitter:card"
-    content="summary"
-  >
-
-  <meta
-    name="twitter:title"
-    content="Certificate Verification | Tensor Academy"
-  >
-
-  <meta
-    name="twitter:description"
-    content="Verify Tensor Academy certificates online using a unique Certificate ID."
-  >
-
-  <link
-    rel="icon"
-    type="image/png"
-    href="assets/images/tensor-academy-logo.png"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
-
-  <title>Certificate Verification | Tensor Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Verify your Tensor Academy certificate online. Enter your Certificate ID to view and download your official certificate.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://tensor-ai-academy.github.io/tensor-ai-academy/verify.html">
+  <title>Certificate Verification — Tensor Academy</title>
+  <link rel="icon" type="image/png" href="assets/images/tensor-academy-logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('tensor-theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
 </head>
-
 <body>
 
-  <a
-    class="skip-link"
-    href="#main-content"
-  >
-    Skip to main content
-  </a>
-
-  <header
-    class="site-header"
-    data-header
-  >
-    <div class="container header-inner">
-
-      <a
-        class="brand"
-        href="index.html"
-        aria-label="Tensor Academy Home"
-      >
-        <img
-          class="brand-logo"
-          src="assets/images/tensor-academy-logo.png"
-          alt="Tensor Academy logo"
-          width="48"
-          height="48"
-        >
-
-        <span class="brand-copy">
-          <strong class="brand-name">
-            Tensor Academy
-          </strong>
-
-          <span class="brand-tagline">
-            Learn AI. Shape the Future.
-          </span>
-        </span>
+  <!-- Header (same as index.html) -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="logo-link" aria-label="Tensor Academy Home">
+        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="logo-img" width="48" height="48">
+        <div class="logo-text">
+          <span class="logo-name">Tensor Academy</span>
+          <span class="logo-tagline" data-i18n="tagline">Learn AI. Shape the Future.</span>
+        </div>
       </a>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        data-menu-toggle
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="mobile-navigation"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </button>
-
-      <nav
-        class="desktop-navigation"
-        aria-label="Primary navigation"
-      >
-        <a
-          href="index.html#about"
-          data-i18n="nav.about"
-        >
-          About Tensor Academy
-        </a>
-
-        <a
-          href="index.html#courses"
-          data-i18n="nav.courses"
-        >
-          Courses
-        </a>
-
-        <a
-          href="index.html#certificates"
-          data-i18n="nav.certificates"
-        >
-          Certificates
-        </a>
-
-        <a
-          href="verify.html"
-          class="is-active"
-          aria-current="page"
-          data-i18n="nav.verify"
-        >
-          Certificate Verification
-        </a>
-
-        <a
-          href="index.html#contact"
-          data-i18n="nav.contact"
-        >
-          Contact
-        </a>
-
-        <a
-          href="index.html#faq"
-          data-i18n="nav.faq"
-        >
-          FAQ
-        </a>
+      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
+          <li><a href="index.html#courses" data-i18n="nav_courses">Courses</a></li>
+          <li><a href="index.html#certificates" data-i18n="nav_certificates">Certificates</a></li>
+          <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+          <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
-
-        <button
-          class="icon-button"
-          type="button"
-          data-language-toggle
-          aria-label="Change language"
-          title="Change language"
-        >
-          <span
-            data-language-value
-            aria-hidden="true"
-          >
-            FA
-          </span>
+        <a href="verify.html" class="btn btn-outline btn-verify" data-i18n="nav_verify">Verify Certificate</a>
+        <button id="langToggle" class="btn-icon" aria-label="Switch Language" title="Switch Language">
+          <span class="lang-indicator">فا</span>
         </button>
-
-        <button
-          class="icon-button"
-          type="button"
-          data-theme-toggle
-          aria-label="Toggle color theme"
-          title="Toggle color theme"
-        >
-          <span
-            data-theme-icon
-            aria-hidden="true"
-          >
-            ☾
-          </span>
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <span class="theme-icon">🌙</span>
         </button>
-
-        <a
-          class="button button-primary header-verify-button"
-          href="verify.html"
-          data-i18n="nav.verify"
-        >
-          Certificate Verification
-        </a>
-
       </div>
 
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
-
-    <nav
-      class="mobile-navigation"
-      id="mobile-navigation"
-      data-mobile-menu
-      aria-label="Mobile navigation"
-    >
-      <a
-        href="index.html#about"
-        data-i18n="nav.about"
-      >
-        About Tensor Academy
-      </a>
-
-      <a
-        href="index.html#courses"
-        data-i18n="nav.courses"
-      >
-        Courses
-      </a>
-
-      <a
-        href="index.html#certificates"
-        data-i18n="nav.certificates"
-      >
-        Certificates
-      </a>
-
-      <a
-        href="verify.html"
-        class="is-active"
-        aria-current="page"
-        data-i18n="nav.verify"
-      >
-        Certificate Verification
-      </a>
-
-      <a
-        href="index.html#contact"
-        data-i18n="nav.contact"
-      >
-        Contact
-      </a>
-
-      <a
-        href="index.html#faq"
-        data-i18n="nav.faq"
-      >
-        FAQ
-      </a>
-
-      <div class="mobile-navigation-actions">
-
-        <button
-          class="button button-secondary"
-          type="button"
-          data-language-toggle
-          aria-label="Change language"
-        >
-          <span data-language-name>
-            فارسی
-          </span>
-        </button>
-
-        <button
-          class="button button-secondary"
-          type="button"
-          data-theme-toggle
-          aria-label="Toggle color theme"
-        >
-          <span data-theme-value>
-            Dark mode
-          </span>
-        </button>
-
-      </div>
-    </nav>
   </header>
 
-  <main id="main-content">
-
-    <section
-      class="page-hero section"
-      aria-labelledby="verification-page-title"
-    >
-      <div class="container">
-
-        <div
-          class="page-hero-content"
-          data-reveal
-        >
-
-          <span class="eyebrow">
-            Academic Credential Verification
-          </span>
-
-          <h1
-            id="verification-page-title"
-          >
-            <span data-i18n="verification.title">
-              Certificate Verification
-            </span>
-          </h1>
-
-          <p
-            class="page-hero-description"
-            data-i18n="verification.description"
-          >
-            Enter a Certificate ID to verify a certificate and view its dedicated verification page.
-          </p>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section
-      class="verification-section section"
-      aria-labelledby="verification-form-title"
-    >
-      <div class="container">
-
-        <div
-          class="verification-card card"
-          data-reveal
-        >
-
-          <div class="verification-card-header">
-
-            <span class="verification-icon" aria-hidden="true">
-              ✓
-            </span>
-
-            <div>
-              <h2 id="verification-form-title">
-                Verify a Certificate
-              </h2>
-
-              <p>
-                Enter the unique Certificate ID issued by Tensor Academy.
-              </p>
-            </div>
-
-          </div>
-
-          <form
-            class="verification-form"
-            data-certificate-form
-            novalidate
-          >
-
-            <div class="form-group">
-
-              <label
-                for="certificate-id"
-                data-i18n="verification.placeholder"
-              >
-                Enter Certificate ID
-              </label>
-
-              <input
-                id="certificate-id"
-                name="certificateId"
-                type="text"
-                data-certificate-id
-                placeholder="TA-AI-2026_MFM_2198_AF"
-                autocomplete="off"
-                spellcheck="false"
-                autocapitalize="characters"
-                required
-                aria-describedby="certificate-help"
-              >
-
-              <p
-                class="form-help"
-                id="certificate-help"
-              >
-                Certificate IDs are case-insensitive.
-              </p>
-
-            </div>
-
-            <button
-              class="button button-primary"
-              type="submit"
-              data-i18n="verification.button"
-            >
-              Verify Certificate
-            </button>
-
-          </form>
-
-          <div
-            class="verification-result"
-            data-verification-result
-            role="status"
-            aria-live="polite"
-            hidden
-          ></div>
-
-        </div>
-
-        <div
-          class="sample-certificate-card card"
-          data-reveal
-        >
-
-          <div class="sample-certificate-content">
-
-            <span class="eyebrow">
-              Sample Certificate
-            </span>
-
-            <h2>
-              Explore a verified certificate example
-            </h2>
-
-            <p>
-              Use the sample Certificate ID below to view the dedicated verification page for the project's demonstration certificate.
-            </p>
-
-            <code class="certificate-id-example">
-              TA-AI-2026_MFM_2198_AF
-            </code>
-
-          </div>
-
-          <a
-            class="button button-secondary"
-            href="verify/certificates/TA-AI-2026_MFM_2198_AF.html"
-            data-i18n="verification.sample"
-          >
-            Try sample certificate
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section
-      class="verification-info section section-muted"
-      aria-labelledby="verification-info-title"
-    >
-      <div class="container">
-
-        <div
-          class="section-heading"
-          data-reveal
-        >
-
-          <span class="eyebrow">
-            Verification Information
-          </span>
-
-          <h2 id="verification-info-title">
-            A dedicated verification page for each certificate
-          </h2>
-
-          <p>
-            Tensor Academy's certificate architecture is designed to support unique certificate identifiers and dedicated verification URLs for multiple learners.
-          </p>
-
-        </div>
-
-        <div
-          class="info-grid"
-          data-reveal
-        >
-
-          <article class="info-card card">
-
-            <span
-              class="info-card-number"
-              aria-hidden="true"
-            >
-              01
-            </span>
-
-            <h3>
-              Unique Certificate ID
-            </h3>
-
-            <p>
-              Each certificate can be associated with a unique identification number for verification.
-            </p>
-
-          </article>
-
-          <article class="info-card card">
-
-            <span
-              class="info-card-number"
-              aria-hidden="true"
-            >
-              02
-            </span>
-
-            <h3>
-              Dedicated Verification URL
-            </h3>
-
-            <p>
-              Certificates can have their own dedicated web page containing relevant verification information.
-            </p>
-
-          </article>
-
-          <article class="info-card card">
-
-            <span
-              class="info-card-number"
-              aria-hidden="true"
-            >
-              03
-            </span>
-
-            <h3>
-              Expandable Architecture
-            </h3>
-
-            <p>
-              The current static architecture can be expanded in the future to support a larger certificate database or API.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-
-    <div class="container">
-
-      <div class="footer-main">
-
-        <div class="footer-brand">
-
-          <a
-            class="brand"
-            href="index.html"
-            aria-label="Tensor Academy Home"
-          >
-
-            <img
-              class="brand-logo"
-              src="assets/images/tensor-academy-logo.png"
-              alt="Tensor Academy logo"
-              width="48"
-              height="48"
-            >
-
-            <span class="brand-copy">
-
-              <strong class="brand-name">
-                Tensor Academy
-              </strong>
-
-              <span class="brand-tagline">
-                Learn AI. Shape the Future.
-              </span>
-
-            </span>
-
-          </a>
-
-          <p>
-            A private online AI academy focused on practical skills, modern AI education, and future career opportunities.
-          </p>
-
-        </div>
-
-        <nav
-          class="footer-navigation"
-          aria-label="Footer navigation"
-        >
-
-          <a
-            href="privacy.html"
-            data-i18n="footer.privacy"
-          >
-            Privacy Policy
-          </a>
-
-          <a
-            href="terms.html"
-            data-i18n="footer.terms"
-          >
-            Terms of Use
-          </a>
-
-          <a
-            href="verify.html"
-            data-i18n="footer.verification"
-          >
-            Certificate Verification
-          </a>
-
-          <a
-            href="index.html#contact"
-            data-i18n="footer.contact"
-          >
-            Contact
-          </a>
-
-        </nav>
-
-      </div>
-
-      <div class="footer-bottom">
-
-        <p data-i18n="footer.rights">
-          © 2026 Tensor Academy. All rights reserved.
+  <!-- Main Verification Content -->
+  <main id="mainContent" class="verification-page">
+    <section class="section-padding">
+      <div class="container" style="max-width: 600px; text-align: center;">
+        <h1 class="section-title" data-i18n="verify_heading">Certificate Verification</h1>
+        <p style="color: var(--color-text-muted); margin-bottom: 2rem;" data-i18n="certificates_subtitle">
+          Every graduate receives a verifiable certificate with a unique ID, QR code, and dedicated online page.
         </p>
 
+        <form id="verifyForm" class="verify-form">
+          <div class="form-group">
+            <label for="certId" class="visually-hidden">Certificate ID</label>
+            <input
+              type="text"
+              id="certId"
+              class="form-input"
+              placeholder="Enter Certificate ID"
+              data-i18n-placeholder="verify_placeholder"
+              aria-describedby="verifyError"
+              autocomplete="off"
+            >
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" data-i18n="verify_button">Verify</button>
+          <div id="verifyError" class="verify-error" role="alert" aria-live="polite"></div>
+        </form>
       </div>
+    </section>
+  </main>
 
+  <!-- Footer (same as index.html) -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="footer-logo" width="40" height="40">
+        <span>Tensor Academy</span>
+      </div>
+      <div class="footer-links">
+        <a href="verify.html" data-i18n="footer_verify">Certificate Verification</a>
+        <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="footer_terms">Terms of Use</a>
+        <a href="index.html#contact" data-i18n="footer_contact">Contact</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 Tensor Academy. All rights reserved.</p>
     </div>
-
   </footer>
 
-  <script
-    src="js/app.js"
-    defer
-  ></script>
-
+  <script src="js/app.js"></script>
 </body>
 </html>
