@@ -1,6 +1,6 @@
 /* ============================================================
    TENSOR ACADEMY — Main Application Script
-   Language, Theme, Navigation, Accordion, Verification
+   Language, Theme, Navigation, Accordion, Verification, Bilingual
    ============================================================ */
 (function () {
   'use strict';
@@ -8,7 +8,6 @@
   /* ---------- i18n Translations ---------- */
   const i18n = {
     en: {
-      // Global
       tagline: 'Learn AI. Shape the Future.',
       nav_about: 'About',
       nav_courses: 'Courses',
@@ -16,7 +15,6 @@
       nav_contact: 'Contact',
       nav_faq: 'FAQ',
       nav_verify: 'Verify Certificate',
-      // Hero
       hero_eyebrow: 'Modern AI Academic Platform',
       hero_title: 'Learn AI. Shape the Future.',
       hero_description: 'Tensor Academy is a bilingual online academy for Deep Learning, Machine Learning, Prompt Engineering, and AI apps/chatbots.',
@@ -25,7 +23,6 @@
       stat_students: 'Students',
       stat_graduates: 'Graduates',
       stat_levels: 'Learning Levels',
-      // About
       about_title: 'About Tensor Academy',
       about_description: 'Tensor Academy is a private online AI academy focused on AI education, career readiness, practical skills, and effective use of artificial intelligence.',
       about_founder_label: 'Founder:',
@@ -40,7 +37,6 @@
       about_field_value: 'Artificial Intelligence Education',
       about_vision_title: 'Our Vision',
       about_vision_text: 'We help learners build practical AI skills, understand modern artificial intelligence technologies, use AI effectively, and prepare themselves for future career and income opportunities.',
-      // Courses
       courses_title: 'Our Courses',
       course_dl_desc: 'Foundations, practice, and real-world applications.',
       course_ml_desc: 'Data-driven models, training workflows, and evaluation.',
@@ -49,18 +45,15 @@
       level_beginner: 'Beginner',
       level_semi: 'Semi-specialized',
       level_specialized: 'Specialized',
-      // Certificates
       certificates_title: 'Certificates',
       certificates_subtitle: 'Every graduate receives a verifiable certificate with a unique ID, QR code, and dedicated online page.',
       cert_feat_verifiable: 'Verifiable Online',
       cert_feat_unique: 'Unique Certificate ID',
       cert_feat_pdf: 'Downloadable PDF',
       cert_cta: 'Verify a Certificate',
-      // Contact
       contact_title: 'Contact Us',
       contact_email_label: 'Email',
       contact_social_label: 'Social & Learning',
-      // FAQ
       faq_title: 'Frequently Asked Questions',
       faq_q1: 'Is Tensor Academy bilingual?',
       faq_a1: 'Yes. The website supports English and Persian / Dari.',
@@ -68,7 +61,6 @@
       faq_a2: 'Yes. Each certificate can have its own verification page and dedicated URL.',
       faq_q3: 'Can certificates be viewed and downloaded?',
       faq_a3: 'Yes. Certificates can be viewed online and downloaded as PDF files.',
-      // Recognition
       recognition_title: 'Recognition',
       recog_authority_label: 'Authority:',
       recog_authority_value: 'Ministry of Higher Education Afghanistan',
@@ -82,13 +74,11 @@
       recog_location_value: 'Online educational activity',
       recog_status_label: 'Status:',
       recog_status_value: 'Active / Valid',
-      // Footer
       footer_verify: 'Certificate Verification',
       footer_privacy: 'Privacy Policy',
       footer_terms: 'Terms of Use',
       footer_contact: 'Contact',
       footer_copy: '© 2026 Tensor Academy. All rights reserved.',
-      // Verification Page (verify.html)
       verify_heading: 'Certificate Verification',
       verify_placeholder: 'Enter Certificate ID',
       verify_button: 'Verify',
@@ -184,14 +174,12 @@
   function updateDocumentLanguage(lang) {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
-    // Update title
     const titleEl = document.querySelector('title');
     if (titleEl) {
       titleEl.textContent = lang === 'fa' 
         ? 'آکادمی تنسور — هوش مصنوعی را بیاموز، آینده را بساز'
         : 'Tensor Academy — Learn AI. Shape the Future.';
     }
-    // Update meta description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute('content', lang === 'fa'
@@ -201,6 +189,7 @@
   }
 
   function applyTranslations(lang) {
+    // Elements with data-i18n
     const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(el => {
       const key = el.getAttribute('data-i18n');
@@ -208,11 +197,21 @@
         el.textContent = i18n[lang][key];
       }
     });
-    // Special case: platforms <li> (not wrapped in data-i18n)
+    // Elements with data-i18n-placeholder (for inputs)
+    const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+    placeholders.forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (i18n[lang] && i18n[lang][key]) {
+        el.setAttribute('placeholder', i18n[lang][key]);
+      }
+    });
+    // Platforms special case
     const platformsLi = document.querySelector('.about-details li:nth-child(4)');
     if (platformsLi && i18n[lang].about_platforms_label && i18n[lang].about_platforms_value) {
       platformsLi.innerHTML = `<strong>${i18n[lang].about_platforms_label}</strong> ${i18n[lang].about_platforms_value}`;
     }
+    // Bilingual static blocks: lang-en / lang-fa visibility is handled by CSS based on html[lang]
+    // No further action needed.
   }
 
   function switchLanguage() {
@@ -221,7 +220,6 @@
     setLang(next);
     updateDocumentLanguage(next);
     applyTranslations(next);
-    // Update language toggle button text
     const langBtn = document.getElementById('langToggle');
     if (langBtn) {
       const indicator = langBtn.querySelector('.lang-indicator');
@@ -259,7 +257,6 @@
       menuBtn.setAttribute('aria-expanded', !expanded);
       nav.classList.toggle('open');
     });
-    // Close menu when a nav link is clicked (mobile)
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
@@ -274,10 +271,8 @@
     triggers.forEach(trigger => {
       trigger.addEventListener('click', function () {
         const expanded = this.getAttribute('aria-expanded') === 'true';
-        // Close all
         triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
         document.querySelectorAll('.accordion-panel').forEach(p => p.classList.remove('open'));
-        // Open clicked if it wasn't open
         if (!expanded) {
           this.setAttribute('aria-expanded', 'true');
           const panel = this.nextElementSibling;
@@ -287,7 +282,7 @@
     });
   }
 
-  /* ---------- Smooth Scroll for Anchor Links ---------- */
+  /* ---------- Smooth Scroll ---------- */
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -302,10 +297,10 @@
     });
   }
 
-  /* ---------- Certificate Verification (verify.html) ---------- */
+  /* ---------- Certificate Verification ---------- */
   function initVerification() {
     const form = document.getElementById('verifyForm');
-    if (!form) return; // not on verify page
+    if (!form) return;
     const input = document.getElementById('certId');
     const errorMsg = document.getElementById('verifyError');
     if (!input || !errorMsg) return;
@@ -317,9 +312,7 @@
         showError(i18n[getLang()].verify_error_empty);
         return;
       }
-      // For now, only valid ID is TA-AI-2026_MFM_2198_AF
       if (id === 'TA-AI-2026_MFM_2198_AF') {
-        // Redirect to individual certificate page
         window.location.href = 'verify/certificates/TA-AI-2026_MFM_2198_AF.html';
       } else {
         showError(i18n[getLang()].verify_error_notfound);
@@ -335,7 +328,6 @@
 
   /* ---------- Initialization ---------- */
   function init() {
-    // Language
     const savedLang = getLang();
     updateDocumentLanguage(savedLang);
     applyTranslations(savedLang);
@@ -346,7 +338,6 @@
       langBtn.addEventListener('click', switchLanguage);
     }
 
-    // Theme
     const savedTheme = getTheme();
     applyTheme(savedTheme);
     const themeBtn = document.getElementById('themeToggle');
@@ -354,20 +345,12 @@
       themeBtn.addEventListener('click', toggleTheme);
     }
 
-    // Mobile menu
     initMobileMenu();
-
-    // Accordion
     initAccordion();
-
-    // Smooth scroll
     initSmoothScroll();
-
-    // Certificate verification
     initVerification();
   }
 
-  // Start everything when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
