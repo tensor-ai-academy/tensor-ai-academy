@@ -2,1096 +2,296 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Tensor Academy is a private bilingual online AI academy focused on Deep Learning, Machine Learning, Prompt Engineering, and AI apps and chatbots."
-  >
-
-  <meta
-    name="robots"
-    content="index, follow"
-  >
-
-  <link
-    rel="canonical"
-    href="https://tensor-ai-academy.github.io/tensor-ai-academy/"
-  >
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:title"
-    content="Tensor Academy | Learn AI. Shape the Future."
-  >
-
-  <meta
-    property="og:description"
-    content="A modern bilingual online academy for practical AI education and future-ready skills."
-  >
-
-  <meta
-    property="og:url"
-    content="https://tensor-ai-academy.github.io/tensor-ai-academy/"
-  >
-
-  <meta
-    property="og:image"
-    content="assets/images/tensor-academy-logo.png"
-  >
-
-  <meta
-    property="og:locale"
-    content="en_US"
-  >
-
-  <meta
-    property="og:locale:alternate"
-    content="fa_AF"
-  >
-
-  <meta
-    name="twitter:card"
-    content="summary"
-  >
-
-  <meta
-    name="twitter:title"
-    content="Tensor Academy | Learn AI. Shape the Future."
-  >
-
-  <meta
-    name="twitter:description"
-    content="A modern bilingual online academy for practical AI education and future-ready skills."
-  >
-
-  <meta
-    name="twitter:image"
-    content="assets/images/tensor-academy-logo.png"
-  >
-
-  <title>Tensor Academy | Learn AI. Shape the Future.</title>
-
-  <link
-    rel="icon"
-    type="image/png"
-    href="assets/images/tensor-academy-logo.png"
-  >
-
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
-
-  <script
-    src="js/app.js"
-    defer
-  ></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tensor Academy — Modern AI Academic Platform. Learn Deep Learning, Machine Learning, Prompt Engineering, and AI Apps.">
+  <meta name="keywords" content="AI academy, deep learning, machine learning, prompt engineering, AI chatbots, tensor academy, online learning">
+  <meta name="author" content="Tensor Academy">
+  <meta property="og:title" content="Tensor Academy — Learn AI. Shape the Future.">
+  <meta property="og:description" content="A private online AI academy focused on practical AI skills, career readiness, and effective use of artificial intelligence.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tensor-ai-academy.github.io/tensor-ai-academy/">
+  <meta property="og:image" content="https://tensor-ai-academy.github.io/tensor-ai-academy/assets/images/tensor-academy-logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tensor-ai-academy.github.io/tensor-ai-academy/">
+  <title>Tensor Academy — Learn AI. Shape the Future.</title>
+  <link rel="icon" type="image/png" href="assets/images/tensor-academy-logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Prevent FOUC for Dark Mode -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('tensor-theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
 </head>
-
 <body>
-  <a
-    class="skip-link"
-    href="#main-content"
-    data-i18n="accessibility.skipToContent"
-  >
-    Skip to content
-  </a>
 
-  <header class="site-header" id="site-header">
+  <!-- Header / Navigation -->
+  <header class="site-header" id="siteHeader">
     <div class="container header-container">
-
-      <a
-        class="brand"
-        href="index.html"
-        aria-label="Tensor Academy home"
-      >
-        <img
-          class="brand-logo"
-          src="assets/images/tensor-academy-logo.png"
-          alt="Tensor Academy logo"
-          width="56"
-          height="56"
-        >
-
-        <span class="brand-content">
-          <span class="brand-name">Tensor Academy</span>
-          <span
-            class="brand-tagline"
-            data-i18n="brand.tagline"
-          >
-            Learn AI. Shape the Future.
-          </span>
-        </span>
+      <a href="index.html" class="logo-link" aria-label="Tensor Academy Home">
+        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="logo-img" width="48" height="48">
+        <div class="logo-text">
+          <span class="logo-name">Tensor Academy</span>
+          <span class="logo-tagline" data-i18n="tagline">Learn AI. Shape the Future.</span>
+        </div>
       </a>
 
-      <nav
-        class="desktop-navigation"
-        aria-label="Primary navigation"
-      >
-        <ul class="navigation-list">
-          <li>
-            <a
-              href="#about"
-              data-i18n="navigation.about"
-            >
-              About Tensor Academy
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="verify.html"
-              data-i18n="navigation.verify"
-            >
-              Certificate Verification
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#contact"
-              data-i18n="navigation.contact"
-            >
-              Contact
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#faq"
-              data-i18n="navigation.faq"
-            >
-              FAQ
-            </a>
-          </li>
+      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#about" data-i18n="nav_about">About</a></li>
+          <li><a href="#courses" data-i18n="nav_courses">Courses</a></li>
+          <li><a href="#certificates" data-i18n="nav_certificates">Certificates</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+          <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <button
-          class="icon-button language-toggle"
-          type="button"
-          id="language-toggle"
-          aria-label="Switch language"
-          aria-pressed="false"
-        >
-          <span
-            class="language-toggle-label"
-            data-language-label
-          >
-            فارسی
-          </span>
+        <a href="verify.html" class="btn btn-outline btn-verify" data-i18n="nav_verify">Verify Certificate</a>
+        <button id="langToggle" class="btn-icon" aria-label="Switch Language" title="Switch Language">
+          <span class="lang-indicator">فا</span>
         </button>
-
-        <button
-          class="icon-button theme-toggle"
-          type="button"
-          id="theme-toggle"
-          aria-label="Toggle color theme"
-          aria-pressed="false"
-        >
-          <span
-            class="theme-icon"
-            aria-hidden="true"
-          >
-            ◐
-          </span>
-
-          <span
-            class="sr-only"
-            data-i18n="accessibility.toggleTheme"
-          >
-            Toggle color theme
-          </span>
-        </button>
-
-        <a
-          class="button button-primary header-verify-button"
-          href="verify.html"
-          data-i18n="buttons.verifyCertificate"
-        >
-          Verify Certificate
-        </a>
-
-        <button
-          class="mobile-menu-toggle"
-          type="button"
-          id="mobile-menu-toggle"
-          aria-label="Open navigation menu"
-          aria-expanded="false"
-          aria-controls="mobile-navigation"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <span class="theme-icon">🌙</span>
         </button>
       </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
-
-    <nav
-      class="mobile-navigation"
-      id="mobile-navigation"
-      aria-label="Mobile navigation"
-      hidden
-    >
-      <div class="container">
-        <ul class="mobile-navigation-list">
-          <li>
-            <a
-              href="#about"
-              data-mobile-nav-link
-              data-i18n="navigation.about"
-            >
-              About Tensor Academy
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#courses"
-              data-mobile-nav-link
-              data-i18n="navigation.courses"
-            >
-              Courses
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="verify.html"
-              data-mobile-nav-link
-              data-i18n="navigation.verify"
-            >
-              Certificate Verification
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#contact"
-              data-mobile-nav-link
-              data-i18n="navigation.contact"
-            >
-              Contact
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#faq"
-              data-mobile-nav-link
-              data-i18n="navigation.faq"
-            >
-              FAQ
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
   </header>
 
-  <main id="main-content">
+  <main id="mainContent">
 
-    <section
-      class="hero-section"
-      id="home"
-      aria-labelledby="hero-title"
-    >
-      <div class="container hero-container">
-
-        <div class="hero-content">
-          <p
-            class="eyebrow"
-            data-i18n="hero.eyebrow"
-          >
-            Modern AI Academic Platform
-          </p>
-
-          <h1
-            id="hero-title"
-            data-i18n="hero.title"
-          >
-            Learn AI. Shape the Future.
-          </h1>
-
-          <p
-            class="hero-description"
-            data-i18n="hero.description"
-          >
-            Tensor Academy is a bilingual online academy for Deep Learning,
-            Machine Learning, Prompt Engineering, and AI apps/chatbots.
-          </p>
-
-          <div class="hero-actions">
-            <a
-              class="button button-primary"
-              href="#courses"
-              data-i18n="buttons.exploreCourses"
-            >
-              Explore Courses
-            </a>
-
-            <a
-              class="button button-secondary"
-              href="verify.html"
-              data-i18n="buttons.verifyCertificate"
-            >
-              Verify Certificate
-            </a>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container hero-content">
+        <p class="hero-eyebrow" data-i18n="hero_eyebrow">Modern AI Academic Platform</p>
+        <h1 class="hero-title" data-i18n="hero_title">Learn AI. Shape the Future.</h1>
+        <p class="hero-description" data-i18n="hero_description">
+          Tensor Academy is a bilingual online academy for Deep Learning, Machine Learning, Prompt Engineering, and AI apps/chatbots.
+        </p>
+        <div class="hero-cta">
+          <a href="#courses" class="btn btn-primary" data-i18n="hero_cta_courses">Explore Courses</a>
+          <a href="verify.html" class="btn btn-secondary" data-i18n="hero_cta_verify">Verify Certificate</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">5000+</span>
+            <span class="stat-label" data-i18n="stat_students">Students</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">200+</span>
+            <span class="stat-label" data-i18n="stat_graduates">Graduates</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label" data-i18n="stat_levels">Learning Levels</span>
           </div>
         </div>
-
-        <div
-          class="hero-visual"
-          aria-hidden="true"
-        >
-          <div class="hero-grid"></div>
-
-          <div class="hero-orbit hero-orbit-one"></div>
-          <div class="hero-orbit hero-orbit-two"></div>
-
-          <div class="hero-core">
-            <span class="hero-core-symbol">T</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="container statistics-grid">
-        <article class="stat-card">
-          <strong class="stat-value">5000+</strong>
-          <span
-            class="stat-label"
-            data-i18n="statistics.students"
-          >
-            Students
-          </span>
-        </article>
-
-        <article class="stat-card">
-          <strong class="stat-value">200+</strong>
-          <span
-            class="stat-label"
-            data-i18n="statistics.graduates"
-          >
-            Graduates
-          </span>
-        </article>
-
-        <article class="stat-card">
-          <strong class="stat-value">3</strong>
-          <span
-            class="stat-label"
-            data-i18n="statistics.levels"
-          >
-            Learning Levels
-          </span>
-        </article>
       </div>
     </section>
 
-    <section
-      class="section about-section"
-      id="about"
-      aria-labelledby="about-title"
-    >
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
       <div class="container">
-
-        <div class="section-heading">
-          <p
-            class="eyebrow"
-            data-i18n="about.eyebrow"
-          >
-            About Tensor Academy
-          </p>
-
-          <h2
-            id="about-title"
-            data-i18n="about.title"
-          >
-            Practical AI education for a future shaped by technology.
-          </h2>
-
-          <p
-            class="section-description"
-            data-i18n="about.description"
-          >
-            Tensor Academy is a private online AI academy focused on AI
-            education, career readiness, practical skills, and effective use
-            of artificial intelligence.
-          </p>
-        </div>
-
+        <h2 class="section-title" data-i18n="about_title">About Tensor Academy</h2>
         <div class="about-grid">
-
-          <div class="about-main">
-            <p data-i18n="about.mission">
-              Our mission is to help learners understand artificial
-              intelligence, develop practical skills, build real-world
-              projects, use modern AI tools effectively, and prepare for
-              future career and income opportunities.
+          <div class="about-text">
+            <p data-i18n="about_description">
+              Tensor Academy is a private online AI academy focused on AI education, career readiness, practical skills, and effective use of artificial intelligence.
             </p>
-
-            <p data-i18n="about.approach">
-              We focus on transforming theoretical knowledge into practical
-              capabilities through structured learning and applied AI
-              education.
-            </p>
+            <ul class="about-details">
+              <li><strong data-i18n="about_founder_label">Founder:</strong> <span data-i18n="about_founder_value">Mohammad Omar Omari</span></li>
+              <li><strong data-i18n="about_type_label">Type:</strong> <span data-i18n="about_type_value">Private Academy</span></li>
+              <li><strong data-i18n="about_mode_label">Mode:</strong> <span data-i18n="about_mode_value">Online</span></li>
+              <li><strong>Platforms:</strong> Telegram, Discord, Google Meet</li>
+              <li><strong data-i18n="about_field_label">Field:</strong> <span data-i18n="about_field_value">Artificial Intelligence Education</span></li>
+            </ul>
           </div>
-
-          <div class="about-details">
-
-            <article class="info-card">
-              <span
-                class="info-card-label"
-                data-i18n="about.founderLabel"
-              >
-                Founder
-              </span>
-
-              <strong data-i18n="about.founder">
-                Mohammad Omar Omari
-              </strong>
-            </article>
-
-            <article class="info-card">
-              <span
-                class="info-card-label"
-                data-i18n="about.typeLabel"
-              >
-                Type
-              </span>
-
-              <strong data-i18n="about.type">
-                Private Academy
-              </strong>
-            </article>
-
-            <article class="info-card">
-              <span
-                class="info-card-label"
-                data-i18n="about.modeLabel"
-              >
-                Mode
-              </span>
-
-              <strong data-i18n="about.mode">
-                Online
-              </strong>
-            </article>
-
-            <article class="info-card">
-              <span
-                class="info-card-label"
-                data-i18n="about.fieldLabel"
-              >
-                Field
-              </span>
-
-              <strong data-i18n="about.field">
-                Artificial Intelligence Education
-              </strong>
-            </article>
-
+          <div class="about-vision">
+            <h3 data-i18n="about_vision_title">Our Vision</h3>
+            <p data-i18n="about_vision_text">
+              We help learners build practical AI skills, understand modern artificial intelligence technologies, use AI effectively, and prepare themselves for future career and income opportunities.
+            </p>
           </div>
         </div>
-
-        <div class="platforms-block">
-          <h3 data-i18n="about.platformsTitle">
-            Learning Platforms
-          </h3>
-
-          <div class="platform-list">
-            <span class="platform-badge">Telegram</span>
-            <span class="platform-badge">Discord</span>
-            <span class="platform-badge">Google Meet</span>
-          </div>
-        </div>
-
-        <div class="recognition-card">
-          <div class="recognition-content">
-            <p
-              class="eyebrow"
-              data-i18n="recognition.eyebrow"
-            >
-              Recognition & License
-            </p>
-
-            <h3 data-i18n="recognition.title">
-              Educational activity license
-            </h3>
-
-            <p data-i18n="recognition.description">
-              Tensor Academy states that it holds recognition for online
-              educational activity from the Ministry of Higher Education
-              Afghanistan, under the Committee for Supervision of Private
-              Institutions.
-            </p>
-          </div>
-
-          <dl class="recognition-details">
-            <div>
-              <dt data-i18n="recognition.nameLabel">Name</dt>
-              <dd>Tensor Academy / آکادمی تنسور</dd>
-            </div>
-
-            <div>
-              <dt data-i18n="recognition.authorityLabel">
-                Issuing Authority
-              </dt>
-              <dd>Ministry of Higher Education Afghanistan</dd>
-            </div>
-
-            <div>
-              <dt data-i18n="recognition.departmentLabel">
-                Department
-              </dt>
-              <dd>کمیته نظارت بر نهاد های خصوصی افغانستان</dd>
-            </div>
-
-            <div>
-              <dt data-i18n="recognition.licenseLabel">
-                License Number
-              </dt>
-              <dd>D-3198</dd>
-            </div>
-
-            <div>
-              <dt data-i18n="recognition.issueDateLabel">
-                Issue Date
-              </dt>
-              <dd>۱۴۰۳/۵/۱۵</dd>
-            </div>
-
-            <div>
-              <dt data-i18n="recognition.locationLabel">
-                Activity Location
-              </dt>
-              <dd>Online educational activity</dd>
-            </div>
-
-            <div>
-              <dt data-i18n="recognition.statusLabel">
-                Status
-              </dt>
-              <dd data-i18n="recognition.status">
-                Active / Valid
-              </dd>
-            </div>
-          </dl>
-        </div>
-
       </div>
     </section>
 
-    <section
-      class="section courses-section"
-      id="courses"
-      aria-labelledby="courses-title"
-    >
+    <!-- Courses Section -->
+    <section class="courses section-padding" id="courses">
       <div class="container">
-
-        <div class="section-heading section-heading-centered">
-          <p
-            class="eyebrow"
-            data-i18n="courses.eyebrow"
-          >
-            Courses
-          </p>
-
-          <h2
-            id="courses-title"
-            data-i18n="courses.title"
-          >
-            Build practical skills across modern AI.
-          </h2>
-
-          <p
-            class="section-description"
-            data-i18n="courses.description"
-          >
-            Explore focused learning paths designed to connect AI concepts
-            with practical skills and real-world applications.
-          </p>
-        </div>
-
-        <div class="course-grid">
-
-          <article class="course-card">
-            <span class="course-number">01</span>
-
-            <div class="course-card-content">
-              <h3 data-i18n="courses.deepLearning.title">
-                Deep Learning
-              </h3>
-
-              <p data-i18n="courses.deepLearning.description">
-                Foundations, practice, and real-world applications.
-              </p>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <span class="course-number">02</span>
-
-            <div class="course-card-content">
-              <h3 data-i18n="courses.machineLearning.title">
-                Machine Learning
-              </h3>
-
-              <p data-i18n="courses.machineLearning.description">
-                Data-driven models, training workflows, and evaluation.
-              </p>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <span class="course-number">03</span>
-
-            <div class="course-card-content">
-              <h3 data-i18n="courses.promptEngineering.title">
-                Prompt Engineering
-              </h3>
-
-              <p data-i18n="courses.promptEngineering.description">
-                Effective prompting for productivity, automation, and AI
-                workflows.
-              </p>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <span class="course-number">04</span>
-
-            <div class="course-card-content">
-              <h3 data-i18n="courses.aiApps.title">
-                AI Apps / Chatbots
-              </h3>
-
-              <p data-i18n="courses.aiApps.description">
-                Building practical AI assistants and chatbot products.
-              </p>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="learning-levels">
-          <h3 data-i18n="courses.levelsTitle">
-            Learning Levels
-          </h3>
-
-          <div class="level-grid">
-
-            <article class="level-card">
-              <span class="level-index">01</span>
-
-              <h4 data-i18n="courses.levels.beginner">
-                Beginner
-              </h4>
-            </article>
-
-            <article class="level-card">
-              <span class="level-index">02</span>
-
-              <h4 data-i18n="courses.levels.semiSpecialized">
-                Semi-specialized
-              </h4>
-            </article>
-
-            <article class="level-card">
-              <span class="level-index">03</span>
-
-              <h4 data-i18n="courses.levels.specialized">
-                Specialized
-              </h4>
-            </article>
-
+        <h2 class="section-title" data-i18n="courses_title">Our Courses</h2>
+        <div class="courses-grid">
+          <div class="course-card">
+            <div class="course-icon">🧠</div>
+            <h3>Deep Learning</h3>
+            <p data-i18n="course_dl_desc">Foundations, practice, and real-world applications.</p>
+            <span class="course-levels">
+              <span class="level beginner" data-i18n="level_beginner">Beginner</span>
+              <span class="level semi" data-i18n="level_semi">Semi-specialized</span>
+              <span class="level specialized" data-i18n="level_specialized">Specialized</span>
+            </span>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">📊</div>
+            <h3>Machine Learning</h3>
+            <p data-i18n="course_ml_desc">Data-driven models, training workflows, and evaluation.</p>
+            <span class="course-levels">
+              <span class="level beginner" data-i18n="level_beginner">Beginner</span>
+              <span class="level semi" data-i18n="level_semi">Semi-specialized</span>
+              <span class="level specialized" data-i18n="level_specialized">Specialized</span>
+            </span>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">✨</div>
+            <h3>Prompt Engineering</h3>
+            <p data-i18n="course_pe_desc">Effective prompting for productivity, automation, and AI workflows.</p>
+            <span class="course-levels">
+              <span class="level beginner" data-i18n="level_beginner">Beginner</span>
+              <span class="level semi" data-i18n="level_semi">Semi-specialized</span>
+              <span class="level specialized" data-i18n="level_specialized">Specialized</span>
+            </span>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">🤖</div>
+            <h3>AI Apps / Chatbots</h3>
+            <p data-i18n="course_aiapps_desc">Building practical AI assistants and chatbot products.</p>
+            <span class="course-levels">
+              <span class="level beginner" data-i18n="level_beginner">Beginner</span>
+              <span class="level semi" data-i18n="level_semi">Semi-specialized</span>
+              <span class="level specialized" data-i18n="level_specialized">Specialized</span>
+            </span>
           </div>
         </div>
-
       </div>
     </section>
 
-    <section
-      class="section certificates-section"
-      id="certificates"
-      aria-labelledby="certificates-title"
-    >
+    <!-- Certificates Section (general) -->
+    <section class="certificates section-padding" id="certificates">
       <div class="container">
-
-        <div class="certificate-overview">
-
-          <div class="section-heading">
-            <p
-              class="eyebrow"
-              data-i18n="certificates.eyebrow"
-            >
-              Certificates
-            </p>
-
-            <h2
-              id="certificates-title"
-              data-i18n="certificates.title"
-            >
-              A verification-ready certificate system.
-            </h2>
-
-            <p
-              class="section-description"
-              data-i18n="certificates.description"
-            >
-              Tensor Academy's certificate architecture is designed to
-              support individual certificate pages, dedicated verification
-              URLs, downloadable PDF certificates, and future expansion to
-              support a growing learner community.
-            </p>
-
-            <a
-              class="button button-primary"
-              href="verify.html"
-              data-i18n="buttons.verifyCertificate"
-            >
-              Verify Certificate
-            </a>
+        <h2 class="section-title" data-i18n="certificates_title">Certificates</h2>
+        <p class="section-subtitle" data-i18n="certificates_subtitle">
+          Every graduate receives a verifiable certificate with a unique ID, QR code, and dedicated online page.
+        </p>
+        <div class="certificate-features">
+          <div class="feature-item">
+            <span class="feature-icon">🔍</span>
+            <span data-i18n="cert_feat_verifiable">Verifiable Online</span>
           </div>
-
-          <div class="certificate-features">
-
-            <article class="feature-card">
-              <span class="feature-icon" aria-hidden="true">ID</span>
-
-              <h3 data-i18n="certificates.features.identity.title">
-                Certificate ID
-              </h3>
-
-              <p data-i18n="certificates.features.identity.description">
-                Each certificate can have a unique identification number and
-                dedicated verification URL.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <span class="feature-icon" aria-hidden="true">QR</span>
-
-              <h3 data-i18n="certificates.features.qr.title">
-                QR Verification
-              </h3>
-
-              <p data-i18n="certificates.features.qr.description">
-                The architecture is prepared for QR codes connected to
-                certificate-specific verification pages.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <span class="feature-icon" aria-hidden="true">PDF</span>
-
-              <h3 data-i18n="certificates.features.pdf.title">
-                PDF Access
-              </h3>
-
-              <p data-i18n="certificates.features.pdf.description">
-                Certificates can be viewed online and made available for
-                download as PDF files.
-              </p>
-            </article>
-
+          <div class="feature-item">
+            <span class="feature-icon">🆔</span>
+            <span data-i18n="cert_feat_unique">Unique Certificate ID</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📄</span>
+            <span data-i18n="cert_feat_pdf">Downloadable PDF</span>
           </div>
         </div>
-
+        <a href="verify.html" class="btn btn-primary" data-i18n="cert_cta">Verify a Certificate</a>
       </div>
     </section>
 
-    <section
-      class="section contact-section"
-      id="contact"
-      aria-labelledby="contact-title"
-    >
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
       <div class="container">
-
+        <h2 class="section-title" data-i18n="contact_title">Contact Us</h2>
         <div class="contact-grid">
-
-          <div class="section-heading">
-            <p
-              class="eyebrow"
-              data-i18n="contact.eyebrow"
-            >
-              Contact
-            </p>
-
-            <h2
-              id="contact-title"
-              data-i18n="contact.title"
-            >
-              Connect with Tensor Academy.
-            </h2>
-
-            <p
-              class="section-description"
-              data-i18n="contact.description"
-            >
-              For questions about Tensor Academy, its educational programs,
-              or certificate verification, use the official contact
-              channels below.
-            </p>
+          <div class="contact-card">
+            <span class="contact-icon">✉️</span>
+            <h3 data-i18n="contact_email_label">Email</h3>
+            <a href="mailto:tensor.ai.academy@gmail.com">tensor.ai.academy@gmail.com</a>
           </div>
-
-          <div class="contact-methods">
-
-            <article class="contact-card">
-              <span
-                class="contact-label"
-                data-i18n="contact.emailLabel"
-              >
-                Official Email
-              </span>
-
-              <a
-                href="mailto:tensor.ai.academy@gmail.com"
-              >
-                tensor.ai.academy@gmail.com
-              </a>
-            </article>
-
-            <article class="contact-card">
-              <span
-                class="contact-label"
-                data-i18n="contact.telegramLabel"
-              >
-                Telegram
-              </span>
-
-              <a
-                href="https://t.me/Tensor_academy_maneger"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @Tensor_academy_maneger
-              </a>
-            </article>
-
-            <article class="contact-card">
-              <span
-                class="contact-label"
-                data-i18n="contact.phoneLabel"
-              >
-                Phone
-              </span>
-
-              <span data-i18n="contact.phoneUnavailable">
-                Not Available
-              </span>
-            </article>
-
+          <div class="contact-card">
+            <span class="contact-icon">📱</span>
+            <h3>Telegram</h3>
+            <a href="https://t.me/Tensor_academy_maneger" target="_blank" rel="noopener noreferrer">@Tensor_academy_maneger</a>
+          </div>
+          <div class="contact-card">
+            <span class="contact-icon">🌐</span>
+            <h3 data-i18n="contact_social_label">Social & Learning</h3>
+            <p>Discord, Google Meet</p>
           </div>
         </div>
-
       </div>
     </section>
 
-    <section
-      class="section faq-section"
-      id="faq"
-      aria-labelledby="faq-title"
-    >
+    <!-- FAQ Section -->
+    <section class="faq section-padding" id="faq">
       <div class="container">
-
-        <div class="section-heading section-heading-centered">
-          <p
-            class="eyebrow"
-            data-i18n="faq.eyebrow"
-          >
-            FAQ
-          </p>
-
-          <h2
-            id="faq-title"
-            data-i18n="faq.title"
-          >
-            Frequently asked questions.
-          </h2>
+        <h2 class="section-title" data-i18n="faq_title">Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" data-i18n="faq_q1">
+              Is Tensor Academy bilingual?
+            </button>
+            <div class="accordion-panel" data-i18n="faq_a1">
+              Yes. The website supports English and Persian / Dari.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" data-i18n="faq_q2">
+              Does the site support certificate verification?
+            </button>
+            <div class="accordion-panel" data-i18n="faq_a2">
+              Yes. Each certificate can have its own verification page and dedicated URL.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" data-i18n="faq_q3">
+              Can certificates be viewed and downloaded?
+            </button>
+            <div class="accordion-panel" data-i18n="faq_a3">
+              Yes. Certificates can be viewed online and downloaded as PDF files.
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="faq-list">
-
-          <details class="faq-item">
-            <summary>
-              <span data-i18n="faq.items.bilingual.question">
-                Is Tensor Academy bilingual?
-              </span>
-
-              <span
-                class="faq-icon"
-                aria-hidden="true"
-              >
-                +
-              </span>
-            </summary>
-
-            <div class="faq-answer">
-              <p data-i18n="faq.items.bilingual.answer">
-                Yes. The website supports English and Persian / Dari.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>
-              <span data-i18n="faq.items.verification.question">
-                Does the site support certificate verification?
-              </span>
-
-              <span
-                class="faq-icon"
-                aria-hidden="true"
-              >
-                +
-              </span>
-            </summary>
-
-            <div class="faq-answer">
-              <p data-i18n="faq.items.verification.answer">
-                Yes. Each certificate can have its own verification page and
-                dedicated URL.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>
-              <span data-i18n="faq.items.pdf.question">
-                Can certificates be viewed and downloaded?
-              </span>
-
-              <span
-                class="faq-icon"
-                aria-hidden="true"
-              >
-                +
-              </span>
-            </summary>
-
-            <div class="faq-answer">
-              <p data-i18n="faq.items.pdf.answer">
-                Yes. Certificates can be viewed online and downloaded as PDF
-                files.
-              </p>
-            </div>
-          </details>
-
+    <!-- Recognition / License -->
+    <section class="recognition section-padding" id="recognition">
+      <div class="container">
+        <h2 class="section-title" data-i18n="recognition_title">Recognition</h2>
+        <div class="recognition-card">
+          <p><strong data-i18n="recog_authority_label">Authority:</strong> <span data-i18n="recog_authority_value">Ministry of Higher Education Afghanistan</span></p>
+          <p><strong data-i18n="recog_department_label">Department:</strong> <span data-i18n="recog_department_value">Private Institutions Supervision Committee</span></p>
+          <p><strong data-i18n="recog_license_label">License Type:</strong> <span data-i18n="recog_license_value">Educational activity license</span></p>
+          <p><strong data-i18n="recog_license_number_label">License Number:</strong> D-3198</p>
+          <p><strong data-i18n="recog_date_label">Issue Date:</strong> ۱۴۰۳/۵/۱۵</p>
+          <p><strong data-i18n="recog_location_label">Location:</strong> <span data-i18n="recog_location_value">Online educational activity</span></p>
+          <p><strong data-i18n="recog_status_label">Status:</strong> <span class="badge badge-active" data-i18n="recog_status_value">Active / Valid</span></p>
         </div>
-
       </div>
     </section>
 
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
-
-      <div class="footer-main">
-
-        <div class="footer-brand">
-          <a
-            class="brand"
-            href="index.html"
-            aria-label="Tensor Academy home"
-          >
-            <img
-              class="brand-logo"
-              src="assets/images/tensor-academy-logo.png"
-              alt="Tensor Academy logo"
-              width="48"
-              height="48"
-            >
-
-            <span class="brand-content">
-              <span class="brand-name">Tensor Academy</span>
-
-              <span
-                class="brand-tagline"
-                data-i18n="brand.tagline"
-              >
-                Learn AI. Shape the Future.
-              </span>
-            </span>
-          </a>
-
-          <p data-i18n="footer.description">
-            A private online AI academy focused on practical skills,
-            technology, and future-ready learning.
-          </p>
-        </div>
-
-        <nav
-          class="footer-navigation"
-          aria-label="Footer navigation"
-        >
-          <h2
-            class="footer-heading"
-            data-i18n="footer.navigationTitle"
-          >
-            Explore
-          </h2>
-
-          <ul>
-            <li>
-              <a
-                href="privacy.html"
-                data-i18n="footer.privacy"
-              >
-                Privacy Policy
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="terms.html"
-                data-i18n="footer.terms"
-              >
-                Terms of Use
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="verify.html"
-                data-i18n="footer.verification"
-              >
-                Certificate Verification
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#contact"
-                data-i18n="footer.contact"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="footer-logo" width="40" height="40">
+        <span>Tensor Academy</span>
       </div>
-
-      <div class="footer-bottom">
-        <p data-i18n="footer.copyright">
-          © 2026 Tensor Academy. All rights reserved.
-        </p>
+      <div class="footer-links">
+        <a href="verify.html" data-i18n="footer_verify">Certificate Verification</a>
+        <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="footer_terms">Terms of Use</a>
+        <a href="#contact" data-i18n="footer_contact">Contact</a>
       </div>
-
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 Tensor Academy. All rights reserved.</p>
     </div>
   </footer>
 
+  <script src="js/app.js"></script>
 </body>
 </html>
