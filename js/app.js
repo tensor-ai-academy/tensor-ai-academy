@@ -1,748 +1,376 @@
-(() => {
+/* ============================================================
+   TENSOR ACADEMY — Main Application Script
+   Language, Theme, Navigation, Accordion, Verification
+   ============================================================ */
+(function () {
   'use strict';
 
-  const STORAGE_KEYS = Object.freeze({
-    theme: 'tensor-academy-theme',
-    language: 'tensor-academy-language'
-  });
-
-  const DEFAULT_LANGUAGE = 'en';
-  const DEFAULT_THEME = 'light';
-
-  const SUPPORTED_LANGUAGES = Object.freeze(['en', 'fa']);
-  const SUPPORTED_THEMES = Object.freeze(['light', 'dark']);
-
-  const translations = {
+  /* ---------- i18n Translations ---------- */
+  const i18n = {
     en: {
-      'nav.about': 'About Tensor Academy',
-      'nav.courses': 'Courses',
-      'nav.certificates': 'Certificates',
-      'nav.verify': 'Certificate Verification',
-      'nav.contact': 'Contact',
-      'nav.faq': 'FAQ',
-
-      'hero.eyebrow': 'Modern AI Academic Platform',
-      'hero.title': 'Learn AI. Shape the Future.',
-      'hero.description':
-        'Tensor Academy is a bilingual online academy for Deep Learning, Machine Learning, Prompt Engineering, and AI apps/chatbots.',
-      'hero.exploreCourses': 'Explore Courses',
-      'hero.verifyCertificate': 'Verify Certificate',
-
-      'stats.students': 'Students',
-      'stats.graduates': 'Graduates',
-      'stats.levels': 'Learning Levels',
-
-      'about.title': 'About Tensor Academy',
-      'about.description':
-        'Tensor Academy is a private online AI academy focused on AI education, career readiness, practical skills, and effective use of artificial intelligence.',
-
-      'courses.title': 'Courses',
-      'courses.deepLearning.title': 'Deep Learning',
-      'courses.deepLearning.description':
-        'Foundations, practice, and real-world applications.',
-      'courses.machineLearning.title': 'Machine Learning',
-      'courses.machineLearning.description':
-        'Data-driven models, training workflows, and evaluation.',
-      'courses.promptEngineering.title': 'Prompt Engineering',
-      'courses.promptEngineering.description':
-        'Effective prompting for productivity, automation, and AI workflows.',
-      'courses.aiApps.title': 'AI Apps / Chatbots',
-      'courses.aiApps.description':
-        'Building practical AI assistants and chatbot products.',
-
-      'levels.title': 'Learning Levels',
-      'levels.beginner': 'Beginner',
-      'levels.semiSpecialized': 'Semi-specialized',
-      'levels.specialized': 'Specialized',
-
-      'certificates.title': 'Certificates',
-      'certificates.description':
-        'Tensor Academy provides a certificate system designed to support verifiable academic achievements and future expansion for multiple learners.',
-      'certificates.verify': 'Verify Certificate',
-
-      'verification.title': 'Certificate Verification',
-      'verification.description':
-        'Enter a Certificate ID to verify a certificate and view its dedicated verification page.',
-      'verification.placeholder': 'Enter Certificate ID',
-      'verification.button': 'Verify Certificate',
-      'verification.sample': 'Try sample certificate',
-
-      'contact.title': 'Contact',
-      'contact.email': 'Email',
-      'contact.telegram': 'Telegram',
-      'contact.phone': 'Phone',
-      'contact.phoneUnavailable': 'Not Available',
-
-      'faq.title': 'Frequently Asked Questions',
-      'faq.bilingual.question': 'Is Tensor Academy bilingual?',
-      'faq.bilingual.answer':
-        'Yes. The website supports English and Persian / Dari.',
-      'faq.verification.question':
-        'Does the site support certificate verification?',
-      'faq.verification.answer':
-        'Yes. Each certificate can have its own verification page and dedicated URL.',
-      'faq.pdf.question':
-        'Can certificates be viewed and downloaded?',
-      'faq.pdf.answer':
-        'Yes. Certificates can be viewed online and downloaded as PDF files.',
-
-      'footer.rights': '© 2026 Tensor Academy. All rights reserved.',
-      'footer.privacy': 'Privacy Policy',
-      'footer.terms': 'Terms of Use',
-      'footer.verification': 'Certificate Verification',
-      'footer.contact': 'Contact',
-
-      'common.menu': 'Menu',
-      'common.close': 'Close',
-      'common.language': 'Language',
-      'common.theme': 'Theme',
-      'common.lightMode': 'Light mode',
-      'common.darkMode': 'Dark mode'
+      // Global
+      tagline: 'Learn AI. Shape the Future.',
+      nav_about: 'About',
+      nav_courses: 'Courses',
+      nav_certificates: 'Certificates',
+      nav_contact: 'Contact',
+      nav_faq: 'FAQ',
+      nav_verify: 'Verify Certificate',
+      // Hero
+      hero_eyebrow: 'Modern AI Academic Platform',
+      hero_title: 'Learn AI. Shape the Future.',
+      hero_description: 'Tensor Academy is a bilingual online academy for Deep Learning, Machine Learning, Prompt Engineering, and AI apps/chatbots.',
+      hero_cta_courses: 'Explore Courses',
+      hero_cta_verify: 'Verify Certificate',
+      stat_students: 'Students',
+      stat_graduates: 'Graduates',
+      stat_levels: 'Learning Levels',
+      // About
+      about_title: 'About Tensor Academy',
+      about_description: 'Tensor Academy is a private online AI academy focused on AI education, career readiness, practical skills, and effective use of artificial intelligence.',
+      about_founder_label: 'Founder:',
+      about_founder_value: 'Mohammad Omar Omari',
+      about_type_label: 'Type:',
+      about_type_value: 'Private Academy',
+      about_mode_label: 'Mode:',
+      about_mode_value: 'Online',
+      about_platforms_label: 'Platforms:',
+      about_platforms_value: 'Telegram, Discord, Google Meet',
+      about_field_label: 'Field:',
+      about_field_value: 'Artificial Intelligence Education',
+      about_vision_title: 'Our Vision',
+      about_vision_text: 'We help learners build practical AI skills, understand modern artificial intelligence technologies, use AI effectively, and prepare themselves for future career and income opportunities.',
+      // Courses
+      courses_title: 'Our Courses',
+      course_dl_desc: 'Foundations, practice, and real-world applications.',
+      course_ml_desc: 'Data-driven models, training workflows, and evaluation.',
+      course_pe_desc: 'Effective prompting for productivity, automation, and AI workflows.',
+      course_aiapps_desc: 'Building practical AI assistants and chatbot products.',
+      level_beginner: 'Beginner',
+      level_semi: 'Semi-specialized',
+      level_specialized: 'Specialized',
+      // Certificates
+      certificates_title: 'Certificates',
+      certificates_subtitle: 'Every graduate receives a verifiable certificate with a unique ID, QR code, and dedicated online page.',
+      cert_feat_verifiable: 'Verifiable Online',
+      cert_feat_unique: 'Unique Certificate ID',
+      cert_feat_pdf: 'Downloadable PDF',
+      cert_cta: 'Verify a Certificate',
+      // Contact
+      contact_title: 'Contact Us',
+      contact_email_label: 'Email',
+      contact_social_label: 'Social & Learning',
+      // FAQ
+      faq_title: 'Frequently Asked Questions',
+      faq_q1: 'Is Tensor Academy bilingual?',
+      faq_a1: 'Yes. The website supports English and Persian / Dari.',
+      faq_q2: 'Does the site support certificate verification?',
+      faq_a2: 'Yes. Each certificate can have its own verification page and dedicated URL.',
+      faq_q3: 'Can certificates be viewed and downloaded?',
+      faq_a3: 'Yes. Certificates can be viewed online and downloaded as PDF files.',
+      // Recognition
+      recognition_title: 'Recognition',
+      recog_authority_label: 'Authority:',
+      recog_authority_value: 'Ministry of Higher Education Afghanistan',
+      recog_department_label: 'Department:',
+      recog_department_value: 'Private Institutions Supervision Committee',
+      recog_license_label: 'License Type:',
+      recog_license_value: 'Educational activity license',
+      recog_license_number_label: 'License Number:',
+      recog_date_label: 'Issue Date:',
+      recog_location_label: 'Location:',
+      recog_location_value: 'Online educational activity',
+      recog_status_label: 'Status:',
+      recog_status_value: 'Active / Valid',
+      // Footer
+      footer_verify: 'Certificate Verification',
+      footer_privacy: 'Privacy Policy',
+      footer_terms: 'Terms of Use',
+      footer_contact: 'Contact',
+      footer_copy: '© 2026 Tensor Academy. All rights reserved.',
+      // Verification Page (verify.html)
+      verify_heading: 'Certificate Verification',
+      verify_placeholder: 'Enter Certificate ID',
+      verify_button: 'Verify',
+      verify_error_empty: 'Please enter a Certificate ID.',
+      verify_error_notfound: 'Certificate not found. Please check the ID and try again.',
     },
-
     fa: {
-      'nav.about': 'درباره آکادمی تنسور',
-      'nav.courses': 'دوره‌ها',
-      'nav.certificates': 'گواهی‌نامه‌ها',
-      'nav.verify': 'تأیید گواهی‌نامه',
-      'nav.contact': 'تماس با ما',
-      'nav.faq': 'سؤالات متداول',
-
-      'hero.eyebrow': 'پلتفرم مدرن آکادمیک هوش مصنوعی',
-      'hero.title': 'هوش مصنوعی را بیاموز، آینده را بساز',
-      'hero.description':
-        'آکادمی تنسور یک آکادمی آنلاین دو زبانه برای یادگیری عمیق، یادگیری ماشین، مهندسی پرامپت و اپلیکیشن‌ها و چت‌بات‌های هوش مصنوعی است.',
-      'hero.exploreCourses': 'مشاهده دوره‌ها',
-      'hero.verifyCertificate': 'تأیید گواهی‌نامه',
-
-      'stats.students': 'دانشجو',
-      'stats.graduates': 'فارغ‌التحصیل',
-      'stats.levels': 'سطح آموزشی',
-
-      'about.title': 'درباره آکادمی تنسور',
-      'about.description':
-        'آکادمی تنسور یک آکادمی خصوصی آنلاین در حوزه هوش مصنوعی است که بر آموزش AI، آمادگی شغلی، مهارت‌های عملی و استفاده مؤثر از هوش مصنوعی تمرکز دارد.',
-
-      'courses.title': 'دوره‌ها',
-      'courses.deepLearning.title': 'یادگیری عمیق',
-      'courses.deepLearning.description':
-        'مبانی، تمرین و کاربردهای واقعی یادگیری عمیق.',
-      'courses.machineLearning.title': 'یادگیری ماشین',
-      'courses.machineLearning.description':
-        'مدل‌های داده‌محور، فرایند آموزش و ارزیابی مدل‌ها.',
-      'courses.promptEngineering.title': 'مهندسی پرامپت',
-      'courses.promptEngineering.description':
-        'پرامپت‌نویسی مؤثر برای بهره‌وری، اتوماسیون و گردش‌کارهای هوش مصنوعی.',
-      'courses.aiApps.title': 'اپلیکیشن‌ها و چت‌بات‌های هوش مصنوعی',
-      'courses.aiApps.description':
-        'ساخت دستیارهای کاربردی هوش مصنوعی و محصولات مبتنی بر چت‌بات.',
-
-      'levels.title': 'سطوح آموزشی',
-      'levels.beginner': 'مقدماتی',
-      'levels.semiSpecialized': 'نیمه‌تخصصی',
-      'levels.specialized': 'تخصصی',
-
-      'certificates.title': 'گواهی‌نامه‌ها',
-      'certificates.description':
-        'آکادمی تنسور دارای سیستم گواهی‌نامه‌ای است که برای پشتیبانی از دستاوردهای آموزشی قابل تأیید و توسعه در مقیاس دانشجویان متعدد طراحی شده است.',
-      'certificates.verify': 'تأیید گواهی‌نامه',
-
-      'verification.title': 'تأیید گواهی‌نامه',
-      'verification.description':
-        'برای بررسی گواهی‌نامه و مشاهده صفحه اختصاصی آن، شناسه گواهی‌نامه را وارد کنید.',
-      'verification.placeholder': 'شناسه گواهی‌نامه را وارد کنید',
-      'verification.button': 'تأیید گواهی‌نامه',
-      'verification.sample': 'مشاهده نمونه گواهی‌نامه',
-
-      'contact.title': 'تماس با ما',
-      'contact.email': 'ایمیل',
-      'contact.telegram': 'تلگرام',
-      'contact.phone': 'تلفن',
-      'contact.phoneUnavailable': 'در دسترس نیست',
-
-      'faq.title': 'سؤالات متداول',
-      'faq.bilingual.question': 'آیا آکادمی تنسور دو زبانه است؟',
-      'faq.bilingual.answer':
-        'بله. وب‌سایت از زبان‌های انگلیسی و فارسی / دری پشتیبانی می‌کند.',
-      'faq.verification.question':
-        'آیا سایت از تأیید گواهی‌نامه پشتیبانی می‌کند؟',
-      'faq.verification.answer':
-        'بله. هر گواهی‌نامه می‌تواند صفحه تأیید اختصاصی و URL مستقل خود را داشته باشد.',
-      'faq.pdf.question':
-        'آیا گواهی‌نامه‌ها قابل مشاهده و دانلود هستند؟',
-      'faq.pdf.answer':
-        'بله. گواهی‌نامه‌ها را می‌توان به‌صورت آنلاین مشاهده و به شکل فایل PDF دانلود کرد.',
-
-      'footer.rights': '© ۲۰۲۶ آکادمی تنسور. تمامی حقوق محفوظ است.',
-      'footer.privacy': 'حریم خصوصی',
-      'footer.terms': 'شرایط استفاده',
-      'footer.verification': 'تأیید گواهی‌نامه',
-      'footer.contact': 'تماس با ما',
-
-      'common.menu': 'منو',
-      'common.close': 'بستن',
-      'common.language': 'زبان',
-      'common.theme': 'پوسته',
-      'common.lightMode': 'حالت روشن',
-      'common.darkMode': 'حالت تاریک'
+      tagline: 'هوش مصنوعی را بیاموز، آینده را بساز',
+      nav_about: 'دربارهٔ ما',
+      nav_courses: 'دوره‌ها',
+      nav_certificates: 'گواهی‌نامه‌ها',
+      nav_contact: 'تماس',
+      nav_faq: 'سوالات متداول',
+      nav_verify: 'تأیید گواهی‌نامه',
+      hero_eyebrow: 'پلتفرم مدرن آموزش هوش مصنوعی',
+      hero_title: 'هوش مصنوعی را بیاموز، آینده را بساز',
+      hero_description: 'آکادمی تنسور یک آکادمی آنلاین دو زبانه برای یادگیری عمیق، یادگیری ماشین، مهندسی پرامپت و اپلیکیشن‌ها و چت‌بات‌های هوش مصنوعی است.',
+      hero_cta_courses: 'مشاهدهٔ دوره‌ها',
+      hero_cta_verify: 'تأیید گواهی‌نامه',
+      stat_students: 'دانشجو',
+      stat_graduates: 'فارغ‌التحصیل',
+      stat_levels: 'سطح آموزشی',
+      about_title: 'دربارهٔ آکادمی تنسور',
+      about_description: 'آکادمی تنسور یک آکادمی خصوصی آنلاین در حوزهٔ هوش مصنوعی است که بر آموزش هوش مصنوعی، آمادگی شغلی، مهارت‌های عملی و استفادهٔ مؤثر از هوش مصنوعی تمرکز دارد.',
+      about_founder_label: 'بنیان‌گذار:',
+      about_founder_value: 'محمد عمر عمری',
+      about_type_label: 'نوع:',
+      about_type_value: 'آکادمی خصوصی',
+      about_mode_label: 'شیوه:',
+      about_mode_value: 'آنلاین',
+      about_platforms_label: 'پلتفرم‌ها:',
+      about_platforms_value: 'تلگرام، دیسکورد، گوگل میت',
+      about_field_label: 'حوزه:',
+      about_field_value: 'آموزش هوش مصنوعی',
+      about_vision_title: 'چشم‌انداز ما',
+      about_vision_text: 'ما به یادگیرندگان کمک می‌کنیم مهارت‌های عملی هوش مصنوعی را کسب کنند، با فناوری‌های نوین آشنا شوند، از هوش مصنوعی به‌طور مؤثر استفاده کنند و برای فرصت‌های شغلی و درآمدی آینده آماده شوند.',
+      courses_title: 'دوره‌های ما',
+      course_dl_desc: 'مبانی، تمرین و کاربردهای واقعی.',
+      course_ml_desc: 'مدل‌های داده‌محور، روند آموزش و ارزیابی.',
+      course_pe_desc: 'پرامپت‌نویسی مؤثر برای بهره‌وری، اتوماسیون و فرایندهای هوش مصنوعی.',
+      course_aiapps_desc: 'ساخت دستیارهای عملی هوش مصنوعی و محصولات چت‌بات.',
+      level_beginner: 'مقدماتی',
+      level_semi: 'نیمه‌تخصصی',
+      level_specialized: 'تخصصی',
+      certificates_title: 'گواهی‌نامه‌ها',
+      certificates_subtitle: 'هر فارغ‌التحصیل یک گواهی‌نامهٔ قابل تأیید با شناسهٔ یکتا، کیوآرکد و صفحهٔ اختصاصی آنلاین دریافت می‌کند.',
+      cert_feat_verifiable: 'قابل تأیید آنلاین',
+      cert_feat_unique: 'شناسهٔ یکتای گواهی',
+      cert_feat_pdf: 'قابل دانلود به‌صورت PDF',
+      cert_cta: 'تأیید یک گواهی‌نامه',
+      contact_title: 'تماس با ما',
+      contact_email_label: 'ایمیل',
+      contact_social_label: 'شبکه‌های اجتماعی و آموزشی',
+      faq_title: 'سوالات متداول',
+      faq_q1: 'آیا آکادمی تنسور دو زبانه است؟',
+      faq_a1: 'بله. وب‌سایت از زبان انگلیسی و فارسی/دری پشتیبانی می‌کند.',
+      faq_q2: 'آیا سایت از تأیید گواهی‌نامه پشتیبانی می‌کند؟',
+      faq_a2: 'بله. هر گواهی‌نامه می‌تواند صفحهٔ تأیید و آدرس اینترنتی اختصاصی خود را داشته باشد.',
+      faq_q3: 'آیا گواهی‌نامه‌ها قابل مشاهده و دانلود هستند؟',
+      faq_a3: 'بله. گواهی‌نامه‌ها به‌صورت آنلاین قابل مشاهده و به‌عنوان فایل PDF قابل دانلود هستند.',
+      recognition_title: 'اعتبار',
+      recog_authority_label: 'مرجع:',
+      recog_authority_value: 'وزارت تحصیلات عالی افغانستان',
+      recog_department_label: 'بخش:',
+      recog_department_value: 'کمیته نظارت بر نهادهای خصوصی',
+      recog_license_label: 'نوع مجوز:',
+      recog_license_value: 'مجوز فعالیت آموزشی',
+      recog_license_number_label: 'شماره مجوز:',
+      recog_date_label: 'تاریخ صدور:',
+      recog_location_label: 'محل فعالیت:',
+      recog_location_value: 'فعالیت آموزشی آنلاین',
+      recog_status_label: 'وضعیت:',
+      recog_status_value: 'معتبر / فعال',
+      footer_verify: 'تأیید گواهی‌نامه',
+      footer_privacy: 'سیاست حفظ حریم خصوصی',
+      footer_terms: 'شرایط استفاده',
+      footer_contact: 'تماس',
+      footer_copy: '© ۲۰۲۶ آکادمی تنسور. تمامی حقوق محفوظ است.',
+      verify_heading: 'تأیید گواهی‌نامه',
+      verify_placeholder: 'شناسهٔ گواهی را وارد کنید',
+      verify_button: 'تأیید',
+      verify_error_empty: 'لطفاً شناسهٔ گواهی را وارد کنید.',
+      verify_error_notfound: 'گواهی یافت نشد. لطفاً شناسه را بررسی و دوباره تلاش کنید.',
     }
   };
 
-  const certificateRoutes = Object.freeze({
-    'TA-AI-2026_MFM_2198_AF':
-      'verify/certificates/TA-AI-2026_MFM_2198_AF.html',
-    'TA-AI-2026_ABH_1059_AF':
-      'verify/certificates/TA-AI-2026_ABH_1059_AF.html'
-  });
+  /* ---------- Utility Functions ---------- */
+  const getLang = () => localStorage.getItem('tensor-lang') || 'en';
+  const setLang = (lang) => localStorage.setItem('tensor-lang', lang);
+  const getTheme = () => localStorage.getItem('tensor-theme') || 'light';
+  const setTheme = (theme) => localStorage.setItem('tensor-theme', theme);
 
-  const getStoredValue = (key, allowedValues, fallback) => {
-    try {
-      const value = localStorage.getItem(key);
-      return allowedValues.includes(value) ? value : fallback;
-    } catch {
-      return fallback;
+  function updateDocumentLanguage(lang) {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+    // Update title
+    const titleEl = document.querySelector('title');
+    if (titleEl) {
+      titleEl.textContent = lang === 'fa' 
+        ? 'آکادمی تنسور — هوش مصنوعی را بیاموز، آینده را بساز'
+        : 'Tensor Academy — Learn AI. Shape the Future.';
     }
-  };
-
-  const setStoredValue = (key, value) => {
-    try {
-      localStorage.setItem(key, value);
-    } catch {
-      // Local storage may be unavailable in restricted environments.
+    // Update meta description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', lang === 'fa'
+        ? 'آکادمی تنسور — پلتفرم مدرن آموزش هوش مصنوعی. یادگیری عمیق، یادگیری ماشین، مهندسی پرامپت و اپلیکیشن‌های هوش مصنوعی.'
+        : 'Tensor Academy — Modern AI Academic Platform. Learn Deep Learning, Machine Learning, Prompt Engineering, and AI Apps.');
     }
-  };
+  }
 
-  const getLanguage = () =>
-    getStoredValue(
-      STORAGE_KEYS.language,
-      SUPPORTED_LANGUAGES,
-      DEFAULT_LANGUAGE
-    );
-
-  const getTheme = () =>
-    getStoredValue(
-      STORAGE_KEYS.theme,
-      SUPPORTED_THEMES,
-      DEFAULT_THEME
-    );
-
-  const setDocumentLanguage = (language) => {
-    const isPersian = language === 'fa';
-
-    document.documentElement.lang = isPersian ? 'fa' : 'en';
-    document.documentElement.dir = isPersian ? 'rtl' : 'ltr';
-  };
-
-  const translateElement = (element, language) => {
-    const key = element.dataset.i18n;
-    if (!key || !translations[language]?.[key]) {
-      return;
-    }
-
-    element.textContent = translations[language][key];
-  };
-
-  const translateAttribute = (element, language) => {
-    const key = element.dataset.i18nAttr;
-    const attribute = element.dataset.i18nAttribute;
-
-    if (
-      !key ||
-      !attribute ||
-      !translations[language]?.[key]
-    ) {
-      return;
-    }
-
-    element.setAttribute(
-      attribute,
-      translations[language][key]
-    );
-  };
-
-  const applyLanguage = (language) => {
-    if (!SUPPORTED_LANGUAGES.includes(language)) {
-      return;
-    }
-
-    setStoredValue(STORAGE_KEYS.language, language);
-    setDocumentLanguage(language);
-
-    document
-      .querySelectorAll('[data-i18n]')
-      .forEach((element) => {
-        translateElement(element, language);
-      });
-
-    document
-      .querySelectorAll('[data-i18n-attr]')
-      .forEach((element) => {
-        translateAttribute(element, language);
-      });
-
-    document
-      .querySelectorAll('[data-language-value]')
-      .forEach((element) => {
-        element.textContent = language === 'fa' ? 'EN' : 'FA';
-      });
-
-    document
-      .querySelectorAll('[data-language-name]')
-      .forEach((element) => {
-        element.textContent =
-          language === 'fa' ? 'English' : 'فارسی';
-      });
-
-    document.dispatchEvent(
-      new CustomEvent('tensor:languagechange', {
-        detail: { language }
-      })
-    );
-  };
-
-  const applyTheme = (theme) => {
-    if (!SUPPORTED_THEMES.includes(theme)) {
-      return;
-    }
-
-    setStoredValue(STORAGE_KEYS.theme, theme);
-
-    document.documentElement.dataset.theme = theme;
-
-    document
-      .querySelectorAll('[data-theme-value]')
-      .forEach((element) => {
-        element.textContent =
-          theme === 'dark'
-            ? translations[getLanguage()]['common.lightMode']
-            : translations[getLanguage()]['common.darkMode'];
-      });
-
-    document
-      .querySelectorAll('[data-theme-icon]')
-      .forEach((element) => {
-        element.textContent = theme === 'dark' ? '☀' : '☾';
-      });
-
-    document.dispatchEvent(
-      new CustomEvent('tensor:themechange', {
-        detail: { theme }
-      })
-    );
-  };
-
-  const initializeLanguageControls = () => {
-    const languageControls = document.querySelectorAll(
-      '[data-language-toggle], [data-language]'
-    );
-
-    languageControls.forEach((control) => {
-      control.addEventListener('click', () => {
-        const currentLanguage = getLanguage();
-        const nextLanguage =
-          currentLanguage === 'en' ? 'fa' : 'en';
-
-        applyLanguage(nextLanguage);
-      });
-    });
-  };
-
-  const initializeThemeControls = () => {
-    const themeControls = document.querySelectorAll(
-      '[data-theme-toggle], [data-theme]'
-    );
-
-    themeControls.forEach((control) => {
-      control.addEventListener('click', () => {
-        const currentTheme = getTheme();
-        const nextTheme =
-          currentTheme === 'light' ? 'dark' : 'light';
-
-        applyTheme(nextTheme);
-      });
-    });
-  };
-
-  const initializeMobileNavigation = () => {
-    const menuToggle = document.querySelector(
-      '[data-menu-toggle]'
-    );
-
-    const mobileMenu = document.querySelector(
-      '[data-mobile-menu]'
-    );
-
-    if (!menuToggle || !mobileMenu) {
-      return;
-    }
-
-    const closeMenu = () => {
-      mobileMenu.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('menu-open');
-    };
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('is-open');
-
-      menuToggle.setAttribute(
-        'aria-expanded',
-        String(isOpen)
-      );
-
-      document.body.classList.toggle(
-        'menu-open',
-        isOpen
-      );
-    });
-
-    mobileMenu
-      .querySelectorAll('a')
-      .forEach((link) => {
-        link.addEventListener('click', closeMenu);
-      });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        closeMenu();
+  function applyTranslations(lang) {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang] && i18n[lang][key]) {
+        el.textContent = i18n[lang][key];
       }
     });
+    // Special case: platforms <li> (not wrapped in data-i18n)
+    const platformsLi = document.querySelector('.about-details li:nth-child(4)');
+    if (platformsLi && i18n[lang].about_platforms_label && i18n[lang].about_platforms_value) {
+      platformsLi.innerHTML = `<strong>${i18n[lang].about_platforms_label}</strong> ${i18n[lang].about_platforms_value}`;
+    }
+  }
 
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 900) {
-        closeMenu();
-      }
+  function switchLanguage() {
+    const current = getLang();
+    const next = current === 'en' ? 'fa' : 'en';
+    setLang(next);
+    updateDocumentLanguage(next);
+    applyTranslations(next);
+    // Update language toggle button text
+    const langBtn = document.getElementById('langToggle');
+    if (langBtn) {
+      const indicator = langBtn.querySelector('.lang-indicator');
+      if (indicator) indicator.textContent = next === 'fa' ? 'En' : 'فا';
+    }
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    const themeBtn = document.getElementById('themeToggle');
+    if (themeBtn) {
+      const icon = themeBtn.querySelector('.theme-icon');
+      if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+  }
+
+  function toggleTheme() {
+    const current = getTheme();
+    const next = current === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    applyTheme(next);
+  }
+
+  /* ---------- Mobile Menu ---------- */
+  function initMobileMenu() {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const nav = document.getElementById('mainNav');
+    if (!menuBtn || !nav) return;
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
     });
-  };
-
-  const initializeSmoothScrolling = () => {
-    document
-      .querySelectorAll('a[href^="#"]')
-      .forEach((link) => {
-        link.addEventListener('click', (event) => {
-          const targetId = link.getAttribute('href');
-
-          if (
-            !targetId ||
-            targetId === '#' ||
-            targetId.length < 2
-          ) {
-            return;
-          }
-
-          const target = document.querySelector(targetId);
-
-          if (!target) {
-            return;
-          }
-
-          event.preventDefault();
-
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-
-          history.replaceState(
-            null,
-            '',
-            targetId
-          );
-        });
-      });
-  };
-
-  const initializeFaq = () => {
-    const faqItems = document.querySelectorAll(
-      '[data-faq-item]'
-    );
-
-    faqItems.forEach((item) => {
-      const question = item.querySelector(
-        '[data-faq-question]'
-      );
-
-      const answer = item.querySelector(
-        '[data-faq-answer]'
-      );
-
-      if (!question || !answer) {
-        return;
-      }
-
-      const answerId =
-        answer.id ||
-        `faq-answer-${Math.random()
-          .toString(36)
-          .slice(2, 10)}`;
-
-      answer.id = answerId;
-
-      question.setAttribute(
-        'aria-controls',
-        answerId
-      );
-
-      question.setAttribute(
-        'aria-expanded',
-        'false'
-      );
-
-      answer.hidden = true;
-
-      question.addEventListener('click', () => {
-        const isOpen =
-          question.getAttribute('aria-expanded') === 'true';
-
-        faqItems.forEach((otherItem) => {
-          const otherQuestion =
-            otherItem.querySelector(
-              '[data-faq-question]'
-            );
-
-          const otherAnswer =
-            otherItem.querySelector(
-              '[data-faq-answer]'
-            );
-
-          if (
-            otherQuestion &&
-            otherAnswer &&
-            otherItem !== item
-          ) {
-            otherQuestion.setAttribute(
-              'aria-expanded',
-              'false'
-            );
-
-            otherItem.classList.remove('is-open');
-            otherAnswer.hidden = true;
-          }
-        });
-
-        question.setAttribute(
-          'aria-expanded',
-          String(!isOpen)
-        );
-
-        item.classList.toggle(
-          'is-open',
-          !isOpen
-        );
-
-        answer.hidden = isOpen;
+    // Close menu when a nav link is clicked (mobile)
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
       });
     });
-  };
+  }
 
-  const initializeCertificateVerification = () => {
-    const form = document.querySelector(
-      '[data-certificate-form]'
-    );
-
-    const input = document.querySelector(
-      '[data-certificate-id]'
-    );
-
-    if (!form || !input) {
-      return;
-    }
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-
-      const certificateId = input.value
-        .trim()
-        .toUpperCase();
-
-      if (!certificateId) {
-        input.focus();
-        return;
-      }
-
-      const route =
-        certificateRoutes[certificateId];
-
-      if (route) {
-        window.location.href = route;
-        return;
-      }
-
-      const verificationResult =
-        document.querySelector(
-          '[data-verification-result]'
-        );
-
-      if (verificationResult) {
-        verificationResult.hidden = false;
-        verificationResult.textContent =
-          'Certificate ID not found. Please check the ID and try again.';
-        verificationResult.classList.add(
-          'is-error'
-        );
-      }
-    });
-  };
-
-  const initializeRevealAnimations = () => {
-    const elements = document.querySelectorAll(
-      '[data-reveal]'
-    );
-
-    if (!elements.length) {
-      return;
-    }
-
-    if (
-      !('IntersectionObserver' in window) ||
-      window.matchMedia(
-        '(prefers-reduced-motion: reduce)'
-      ).matches
-    ) {
-      elements.forEach((element) => {
-        element.classList.add('is-visible');
-      });
-
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries, observerInstance) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          entry.target.classList.add(
-            'is-visible'
-          );
-
-          observerInstance.unobserve(
-            entry.target
-          );
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px'
-      }
-    );
-
-    elements.forEach((element) => {
-      observer.observe(element);
-    });
-  };
-
-  const initializeActiveNavigation = () => {
-    const sections = document.querySelectorAll(
-      'main section[id]'
-    );
-
-    const navigationLinks =
-      document.querySelectorAll(
-        'a[href^="#"]'
-      );
-
-    if (
-      !sections.length ||
-      !navigationLinks.length ||
-      !('IntersectionObserver' in window)
-    ) {
-      return;
-    }
-
-    const sectionObserver =
-      new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) {
-              return;
-            }
-
-            navigationLinks.forEach((link) => {
-              const matches =
-                link.getAttribute('href') ===
-                `#${entry.target.id}`;
-
-              link.classList.toggle(
-                'is-active',
-                matches
-              );
-
-              if (matches) {
-                link.setAttribute(
-                  'aria-current',
-                  'page'
-                );
-              } else {
-                link.removeAttribute(
-                  'aria-current'
-                );
-              }
-            });
-          });
-        },
-        {
-          rootMargin:
-            '-20% 0px -65% 0px',
-          threshold: 0
-        }
-      );
-
-    sections.forEach((section) => {
-      sectionObserver.observe(section);
-    });
-  };
-
-  const initializeExternalLinks = () => {
-    document
-      .querySelectorAll('a[href^="http"]')
-      .forEach((link) => {
-        const currentHost =
-          window.location.hostname;
-
-        try {
-          const linkHost =
-            new URL(link.href).hostname;
-
-          if (
-            linkHost &&
-            linkHost !== currentHost
-          ) {
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-          }
-        } catch {
-          // Ignore malformed URLs.
+  /* ---------- Accordion ---------- */
+  function initAccordion() {
+    const triggers = document.querySelectorAll('.accordion-trigger');
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', function () {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        // Close all
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        document.querySelectorAll('.accordion-panel').forEach(p => p.classList.remove('open'));
+        // Open clicked if it wasn't open
+        if (!expanded) {
+          this.setAttribute('aria-expanded', 'true');
+          const panel = this.nextElementSibling;
+          if (panel) panel.classList.add('open');
         }
       });
-  };
+    });
+  }
 
-  const initializeApp = () => {
-    const initialLanguage = getLanguage();
-    const initialTheme = getTheme();
+  /* ---------- Smooth Scroll for Anchor Links ---------- */
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
 
-    applyLanguage(initialLanguage);
-    applyTheme(initialTheme);
+  /* ---------- Certificate Verification (verify.html) ---------- */
+  function initVerification() {
+    const form = document.getElementById('verifyForm');
+    if (!form) return; // not on verify page
+    const input = document.getElementById('certId');
+    const errorMsg = document.getElementById('verifyError');
+    if (!input || !errorMsg) return;
 
-    initializeLanguageControls();
-    initializeThemeControls();
-    initializeMobileNavigation();
-    initializeSmoothScrolling();
-    initializeFaq();
-    initializeCertificateVerification();
-    initializeRevealAnimations();
-    initializeActiveNavigation();
-    initializeExternalLinks();
-  };
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const id = input.value.trim();
+      if (!id) {
+        showError(i18n[getLang()].verify_error_empty);
+        return;
+      }
+      // For now, only valid ID is TA-AI-2026_MFM_2198_AF
+      if (id === 'TA-AI-2026_MFM_2198_AF') {
+        // Redirect to individual certificate page
+        window.location.href = 'verify/certificates/TA-AI-2026_MFM_2198_AF.html';
+      } else {
+        showError(i18n[getLang()].verify_error_notfound);
+      }
+    });
 
+    function showError(msg) {
+      errorMsg.textContent = msg;
+      errorMsg.style.display = 'block';
+      setTimeout(() => { errorMsg.style.display = 'none'; }, 5000);
+    }
+  }
+
+  /* ---------- Initialization ---------- */
+  function init() {
+    // Language
+    const savedLang = getLang();
+    updateDocumentLanguage(savedLang);
+    applyTranslations(savedLang);
+    const langBtn = document.getElementById('langToggle');
+    if (langBtn) {
+      const indicator = langBtn.querySelector('.lang-indicator');
+      if (indicator) indicator.textContent = savedLang === 'fa' ? 'En' : 'فا';
+      langBtn.addEventListener('click', switchLanguage);
+    }
+
+    // Theme
+    const savedTheme = getTheme();
+    applyTheme(savedTheme);
+    const themeBtn = document.getElementById('themeToggle');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', toggleTheme);
+    }
+
+    // Mobile menu
+    initMobileMenu();
+
+    // Accordion
+    initAccordion();
+
+    // Smooth scroll
+    initSmoothScroll();
+
+    // Certificate verification
+    initVerification();
+  }
+
+  // Start everything when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener(
-      'DOMContentLoaded',
-      initializeApp,
-      { once: true }
-    );
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    initializeApp();
+    init();
   }
 })();
