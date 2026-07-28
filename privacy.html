@@ -49,20 +49,32 @@
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
           <span class="theme-icon">🌙</span>
         </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Full Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
-
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
     </div>
+
+    <nav class="fullscreen-menu" id="fullscreenMenu" aria-label="Full Navigation">
+      <ul class="fullscreen-nav-list">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
+        <li><a href="index.html#courses" data-i18n="nav_courses">Courses</a></li>
+        <li><a href="index.html#certificates" data-i18n="nav_certificates">Certificates</a></li>
+        <li><a href="verify.html" data-i18n="nav_verify">Verify Certificate</a></li>
+        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
+        <li><a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a></li>
+        <li><a href="terms.html" data-i18n="nav_terms">Terms of Use</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Main Content -->
-  <main id="mainContent" class="policy-page section-padding">
+  <main id="mainContent" class="policy-page section-padding reveal">
     <div class="container" style="max-width: 800px;">
-      <!-- English Content -->
+      <!-- English -->
       <div class="lang-en">
         <h1>Privacy Policy</h1>
         <p><strong>Effective Date:</strong> 2026</p>
@@ -89,7 +101,7 @@
         <p>For any questions about this policy, contact us at <a href="mailto:tensor.ai.academy@gmail.com">tensor.ai.academy@gmail.com</a>.</p>
       </div>
 
-      <!-- Persian Content -->
+      <!-- Persian -->
       <div class="lang-fa" dir="rtl">
         <h1>سیاست حفظ حریم خصوصی</h1>
         <p><strong>تاریخ اجرا:</strong> ۲۰۲۶</p>
