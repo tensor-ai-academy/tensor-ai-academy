@@ -3,107 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Verify your Tensor Academy certificate online. Enter your Certificate ID to view and download your official certificate.">
-  <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://tensor-ai-academy.github.io/tensor-ai-academy/verify.html">
+
+  <!-- SEO Meta -->
   <title>Certificate Verification — Tensor Academy</title>
-  <link rel="icon" type="image/png" href="assets/images/tensor-academy-logo.png">
+  <meta name="description" content="Verify the authenticity of a Tensor Academy certificate by entering its unique Certificate ID.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tensor-ai-academy.github.io/tensor-ai-academy/verify.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Certificate Verification — Tensor Academy">
+  <meta property="og:description" content="Verify a Tensor Academy certificate online using its unique ID.">
+  <meta property="og:image" content="assets/images/tensor-academy-logo.png">
+  <meta property="og:url" content="https://tensor-ai-academy.github.io/tensor-ai-academy/verify.html">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="assets/images/tensor-academy-logo.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('tensor-theme');
-      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      }
-    })();
-  </script>
 </head>
 <body>
 
-  <!-- Header (same as index.html) -->
-  <header class="site-header" id="siteHeader">
-    <div class="container header-container">
-      <a href="index.html" class="logo-link" aria-label="Tensor Academy Home">
-        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="logo-img" width="48" height="48">
-        <div class="logo-text">
-          <span class="logo-name">Tensor Academy</span>
-          <span class="logo-tagline" data-i18n="tagline">Learn AI. Shape the Future.</span>
+  <!-- ========== HEADER (Simplified, consistent with main site) ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Tensor Academy Home">
+        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="header__logo-img" width="40" height="40">
+        <div>
+          <span class="header__logo-text" data-lang="header.logo">Tensor Academy</span>
+          <span class="header__logo-tagline" data-lang="header.tagline">Learn AI. Shape the Future.</span>
         </div>
       </a>
 
-      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
-        <ul class="nav-list">
-          <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
-          <li><a href="index.html#courses" data-i18n="nav_courses">Courses</a></li>
-          <li><a href="index.html#certificates" data-i18n="nav_certificates">Certificates</a></li>
-          <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
-          <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
-        </ul>
+      <nav class="header__nav" aria-label="Main Navigation">
+        <a href="index.html" class="header__nav-link" data-lang="nav.about">About</a>
+        <a href="index.html#courses" class="header__nav-link" data-lang="nav.courses">Courses</a>
+        <a href="index.html#certificates" class="header__nav-link" data-lang="nav.certificates">Certificates</a>
+        <a href="index.html#contact" class="header__nav-link" data-lang="nav.contact">Contact</a>
+        <a href="index.html#faq" class="header__nav-link" data-lang="nav.faq">FAQ</a>
       </nav>
 
-      <div class="header-actions">
-        <a href="verify.html" class="btn btn-outline btn-verify" data-i18n="nav_verify">Verify Certificate</a>
-        <button id="langToggle" class="btn-icon" aria-label="Switch Language" title="Switch Language">
-          <span class="lang-indicator">فا</span>
+      <div class="header__actions">
+        <div class="lang-switcher" aria-label="Language Switcher">
+          <button class="lang-switcher__btn lang-switcher__btn--active" data-lang-code="en" aria-label="Switch to English">EN</button>
+          <button class="lang-switcher__btn" data-lang-code="fa" aria-label="Switch to فارسی">FA</button>
+        </div>
+        <button class="theme-toggle header__btn--icon" id="themeToggle" aria-label="Toggle dark/light mode">
+          <span class="theme-toggle__icon">🌙</span>
         </button>
-        <button id="themeToggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
-          <span class="theme-icon">🌙</span>
+        <button class="header__menu-toggle" id="mobileMenuToggle" aria-label="Open Menu" aria-expanded="false">
+          <span class="menu-icon">☰</span>
         </button>
       </div>
-
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
     </div>
   </header>
 
-  <!-- Main Verification Content -->
-  <main id="mainContent" class="verification-page">
-    <section class="section-padding">
-      <div class="container" style="max-width: 600px; text-align: center;">
-        <h1 class="section-title" data-i18n="verify_heading">Certificate Verification</h1>
-        <p style="color: var(--color-text-muted); margin-bottom: 2rem;" data-i18n="certificates_subtitle">
-          Every graduate receives a verifiable certificate with a unique ID, QR code, and dedicated online page.
-        </p>
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-nav__link" data-lang="nav.about">About</a>
+    <a href="index.html#courses" class="mobile-nav__link" data-lang="nav.courses">Courses</a>
+    <a href="index.html#certificates" class="mobile-nav__link" data-lang="nav.certificates">Certificates</a>
+    <a href="index.html#contact" class="mobile-nav__link" data-lang="nav.contact">Contact</a>
+    <a href="index.html#faq" class="mobile-nav__link" data-lang="nav.faq">FAQ</a>
+    <div class="mobile-nav__divider"></div>
+    <a href="privacy.html" class="mobile-nav__link" data-lang="nav.privacy">Privacy Policy</a>
+    <a href="terms.html" class="mobile-nav__link" data-lang="nav.terms">Terms of Use</a>
+    <div class="mobile-nav__actions">
+      <div class="lang-switcher mobile-nav__lang-switcher">
+        <button class="lang-switcher__btn lang-switcher__btn--active" data-lang-code="en">EN</button>
+        <button class="lang-switcher__btn" data-lang-code="fa">FA</button>
+      </div>
+      <a href="verify.html" class="header__btn header__btn--primary btn--full" data-lang="nav.verify">Verify Certificate</a>
+    </div>
+  </nav>
 
-        <form id="verifyForm" class="verify-form">
-          <div class="form-group">
-            <label for="certId" class="visually-hidden">Certificate ID</label>
-            <input
-              type="text"
-              id="certId"
-              class="form-input"
-              placeholder="Enter Certificate ID"
-              data-i18n-placeholder="verify_placeholder"
-              aria-describedby="verifyError"
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+    <section class="verify-page">
+      <div class="verify-page__container">
+        <div class="verify-page__card">
+          <div class="verify-page__icon">🔍</div>
+          <h1 class="verify-page__title" data-lang="verify.searchTitle">Certificate Verification</h1>
+          <p class="verify-page__subtitle" data-lang="verify.searchSubtitle">Enter the unique Certificate ID to verify its authenticity.</p>
+
+          <!-- Verification Form -->
+          <form class="verify-form" id="verifyPageForm" style="margin-bottom: var(--space-6);">
+            <input 
+              type="text" 
+              class="verify-form__input" 
+              id="verifyPageInput" 
+              placeholder="e.g., TA-AI-2026_ABH_1059_AF" 
+              aria-label="Certificate ID"
               autocomplete="off"
             >
-          </div>
-          <button type="submit" class="btn btn-primary btn-full" data-i18n="verify_button">Verify</button>
-          <div id="verifyError" class="verify-error" role="alert" aria-live="polite"></div>
-        </form>
+            <button type="submit" class="btn btn--primary" data-lang="verify.btn">Verify</button>
+          </form>
+
+          <!-- Result Container -->
+          <div class="verify-result" id="verifyPageResult"></div>
+
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-6);">
+            <span data-lang="verify.sampleHint">Try sample IDs: </span>
+            <code style="font-family: var(--font-mono); background: var(--color-surface-alt); padding: 2px 6px; border-radius: 4px;">TA-AI-2026_ABH_1059_AF</code> 
+            <span data-lang="verify.or"> or </span>
+            <code style="font-family: var(--font-mono); background: var(--color-surface-alt); padding: 2px 6px; border-radius: 4px;">TA-AI-2026_MFM_2198_AF</code>
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer (same as index.html) -->
-  <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="footer-logo" width="40" height="40">
-        <span>Tensor Academy</span>
+  <!-- ========== FOOTER (Simplified) ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div>
+          <div class="footer__brand-name">Tensor Academy</div>
+          <p class="footer__brand-tagline" data-lang="footer.tagline">Learn AI. Shape the Future.</p>
+        </div>
+        <div>
+          <div class="footer__heading" data-lang="footer.quickLinks">Quick Links</div>
+          <div class="footer__links">
+            <a href="index.html" class="footer__link" data-lang="nav.about">About</a>
+            <a href="index.html#courses" class="footer__link" data-lang="nav.courses">Courses</a>
+            <a href="privacy.html" class="footer__link" data-lang="nav.privacy">Privacy Policy</a>
+            <a href="terms.html" class="footer__link" data-lang="nav.terms">Terms of Use</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__heading" data-lang="footer.contactHeading">Contact</div>
+          <div class="footer__links">
+            <a href="mailto:tensor.ai.academy@gmail.com" class="footer__link">tensor.ai.academy@gmail.com</a>
+            <a href="https://t.me/Tensor_academy_maneger" target="_blank" rel="noopener noreferrer" class="footer__link">Telegram: @Tensor_academy_maneger</a>
+          </div>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="verify.html" data-i18n="footer_verify">Certificate Verification</a>
-        <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
-        <a href="terms.html" data-i18n="footer_terms">Terms of Use</a>
-        <a href="index.html#contact" data-i18n="footer_contact">Contact</a>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Tensor Academy. <span data-lang="footer.rights">All rights reserved.</span></p>
       </div>
-      <p class="footer-copy" data-i18n="footer_copy">© 2026 Tensor Academy. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+  <div class="toast" id="toast" aria-live="polite"></div>
 
   <script src="js/app.js"></script>
 </body>
