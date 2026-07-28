@@ -3,167 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tensor Academy Terms of Use — conditions for using our website and services.">
-  <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://tensor-ai-academy.github.io/tensor-ai-academy/terms.html">
+
+  <!-- SEO Meta -->
   <title>Terms of Use — Tensor Academy</title>
-  <link rel="icon" type="image/png" href="assets/images/tensor-academy-logo.png">
+  <meta name="description" content="Terms of Use for Tensor Academy website and services. Read our terms regarding content usage, certificate verification, and user responsibilities.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tensor-ai-academy.github.io/tensor-ai-academy/terms.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Terms of Use — Tensor Academy">
+  <meta property="og:description" content="Review the Terms of Use for Tensor Academy website, services, and certificate verification.">
+  <meta property="og:image" content="assets/images/tensor-academy-logo.png">
+  <meta property="og:url" content="https://tensor-ai-academy.github.io/tensor-ai-academy/terms.html">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="assets/images/tensor-academy-logo.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('tensor-theme');
-      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      }
-    })();
-  </script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header" id="siteHeader">
-    <div class="container header-container">
-      <a href="index.html" class="logo-link" aria-label="Tensor Academy Home">
-        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="logo-img" width="48" height="48">
-        <div class="logo-text">
-          <span class="logo-name">Tensor Academy</span>
-          <span class="logo-tagline" data-i18n="tagline">Learn AI. Shape the Future.</span>
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Tensor Academy Home">
+        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="header__logo-img" width="40" height="40">
+        <div>
+          <span class="header__logo-text" data-lang="header.logo">Tensor Academy</span>
+          <span class="header__logo-tagline" data-lang="header.tagline">Learn AI. Shape the Future.</span>
         </div>
       </a>
 
-      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
-        <ul class="nav-list">
-          <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
-          <li><a href="index.html#courses" data-i18n="nav_courses">Courses</a></li>
-          <li><a href="index.html#certificates" data-i18n="nav_certificates">Certificates</a></li>
-          <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
-          <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
-        </ul>
+      <nav class="header__nav">
+        <a href="index.html#about" class="header__nav-link" data-lang="nav.about">About</a>
+        <a href="index.html#courses" class="header__nav-link" data-lang="nav.courses">Courses</a>
+        <a href="index.html#certificates" class="header__nav-link" data-lang="nav.certificates">Certificates</a>
+        <a href="index.html#contact" class="header__nav-link" data-lang="nav.contact">Contact</a>
+        <a href="index.html#faq" class="header__nav-link" data-lang="nav.faq">FAQ</a>
       </nav>
 
-      <div class="header-actions">
-        <a href="verify.html" class="btn btn-outline btn-verify" data-i18n="nav_verify">Verify Certificate</a>
-        <button id="langToggle" class="btn-icon" aria-label="Switch Language" title="Switch Language">
-          <span class="lang-indicator">فا</span>
+      <div class="header__actions">
+        <div class="lang-switcher">
+          <button class="lang-switcher__btn lang-switcher__btn--active" data-lang-code="en">EN</button>
+          <button class="lang-switcher__btn" data-lang-code="fa">FA</button>
+        </div>
+        <button class="theme-toggle header__btn--icon" id="themeToggle" aria-label="Toggle dark/light mode">
+          <span class="theme-toggle__icon">🌙</span>
         </button>
-        <button id="themeToggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
-          <span class="theme-icon">🌙</span>
-        </button>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Full Menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+        <button class="header__menu-toggle" id="mobileMenuToggle" aria-label="Open Menu" aria-expanded="false">
+          <span class="menu-icon">☰</span>
         </button>
       </div>
     </div>
-
-    <nav class="fullscreen-menu" id="fullscreenMenu" aria-label="Full Navigation">
-      <ul class="fullscreen-nav-list">
-        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-        <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
-        <li><a href="index.html#courses" data-i18n="nav_courses">Courses</a></li>
-        <li><a href="index.html#certificates" data-i18n="nav_certificates">Certificates</a></li>
-        <li><a href="verify.html" data-i18n="nav_verify">Verify Certificate</a></li>
-        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
-        <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
-        <li><a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a></li>
-        <li><a href="terms.html" data-i18n="nav_terms">Terms of Use</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <main id="mainContent" class="policy-page section-padding reveal">
-    <div class="container" style="max-width: 800px;">
-      <!-- English -->
-      <div class="lang-en">
-        <h1>Terms of Use</h1>
-        <p><strong>Last Updated:</strong> 2026</p>
-
-        <h2>1. Acceptance of Terms</h2>
-        <p>By accessing or using the Tensor Academy website, you agree to be bound by these Terms of Use. If you do not agree, please do not use our site.</p>
-
-        <h2>2. Use of Content</h2>
-        <p>All content on this website, including text, graphics, logos, and course descriptions, is the property of Tensor Academy and is protected by applicable copyright laws. You may not reproduce, distribute, or modify any content without prior written permission.</p>
-
-        <h2>3. Certificate Verification</h2>
-        <p>The certificate verification tool is provided for informational purposes to confirm the authenticity of certificates issued by Tensor Academy. It does not constitute an official academic transcript or legal document beyond its stated purpose.</p>
-
-        <h2>4. Accuracy of Information</h2>
-        <p>We strive to keep all information accurate and up-to-date. However, we make no warranties or representations about the completeness or accuracy of the content on this site. Course availability, descriptions, and schedules may change without notice.</p>
-
-        <h2>5. Prohibited Actions</h2>
-        <p>You agree not to:</p>
-        <ul>
-          <li>Use the site for any unlawful purpose or in violation of any applicable laws.</li>
-          <li>Attempt to gain unauthorized access to any part of the site or its systems.</li>
-          <li>Misuse the certificate verification system or attempt to forge certificates.</li>
-          <li>Engage in any activity that disrupts or interferes with the proper functioning of the site.</li>
-        </ul>
-
-        <h2>6. External Services</h2>
-        <p>Our website may link to third-party platforms such as Telegram, Discord, and Google Meet. We are not responsible for the content, availability, or practices of these external services. Your use of them is at your own risk and subject to their respective terms.</p>
-
-        <h2>7. Changes to Terms</h2>
-        <p>We reserve the right to modify these Terms of Use at any time. Updated terms will be posted on this page. Continued use of the site after changes constitutes acceptance of the new terms.</p>
-
-        <h2>8. Contact</h2>
-        <p>For questions regarding these terms, contact us at <a href="mailto:tensor.ai.academy@gmail.com">tensor.ai.academy@gmail.com</a>.</p>
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <a href="index.html#about" class="mobile-nav__link" data-lang="nav.about">About</a>
+    <a href="index.html#courses" class="mobile-nav__link" data-lang="nav.courses">Courses</a>
+    <a href="index.html#certificates" class="mobile-nav__link" data-lang="nav.certificates">Certificates</a>
+    <a href="index.html#contact" class="mobile-nav__link" data-lang="nav.contact">Contact</a>
+    <a href="index.html#faq" class="mobile-nav__link" data-lang="nav.faq">FAQ</a>
+    <div class="mobile-nav__divider"></div>
+    <a href="privacy.html" class="mobile-nav__link" data-lang="nav.privacy">Privacy Policy</a>
+    <a href="terms.html" class="mobile-nav__link" data-lang="nav.terms">Terms of Use</a>
+    <div class="mobile-nav__actions">
+      <div class="lang-switcher mobile-nav__lang-switcher">
+        <button class="lang-switcher__btn lang-switcher__btn--active" data-lang-code="en">EN</button>
+        <button class="lang-switcher__btn" data-lang-code="fa">FA</button>
       </div>
+      <a href="verify.html" class="header__btn header__btn--primary btn--full" data-lang="nav.verify">Verify Certificate</a>
+    </div>
+  </nav>
 
-      <!-- Persian -->
-      <div class="lang-fa" dir="rtl">
-        <h1>شرایط استفاده</h1>
-        <p><strong>آخرین به‌روزرسانی:</strong> ۲۰۲۶</p>
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="legal-page">
+    <div class="container legal-content">
+      <h1 data-lang="terms.title">Terms of Use</h1>
+      <p class="last-updated" data-lang="terms.lastUpdated">Last Updated: July 2026</p>
 
-        <h2>۱. پذیرش شرایط</h2>
-        <p>با دسترسی یا استفاده از وب‌سایت آکادمی تنسور، شما موافقت خود را با این شرایط استفاده اعلام می‌کنید. اگر موافق نیستید، لطفاً از سایت ما استفاده نکنید.</p>
+      <!-- Introduction -->
+      <p data-lang="terms.intro">By accessing and using the Tensor Academy website and services, you agree to comply with the following Terms of Use. Please read them carefully.</p>
 
-        <h2>۲. استفاده از محتوا</h2>
-        <p>تمامی محتوای این وب‌سایت، شامل متون، گرافیک، لوگوها و توضیحات دوره‌ها، متعلق به آکادمی تنسور است و تحت قوانین حق تکثیر محافظت می‌شود. شما مجاز به بازتولید، توزیع یا تغییر هیچ محتوایی بدون کسب اجازهٔ کتبی قبلی نیستید.</p>
+      <!-- Section 1: Use of Content -->
+      <h2 data-lang="terms.s1_title">1. Use of Content</h2>
+      <p data-lang="terms.s1_text">All content on this website, including text, graphics, logos, and course materials, is the property of Tensor Academy and is protected by applicable intellectual property laws. You may view and use the content for personal, non-commercial purposes only. Any reproduction, distribution, or modification without prior written permission is prohibited.</p>
 
-        <h2>۳. تأیید گواهی‌نامه</h2>
-        <p>ابزار تأیید گواهی‌نامه صرفاً جهت اطلاع‌رسانی و تأیید اصالت گواهی‌های صادرشده توسط آکادمی تنسور ارائه شده است و به‌منزلهٔ ریزنمرات رسمی یا سند قانونی فراتر از هدف ذکرشده نیست.</p>
+      <!-- Section 2: Certificate Verification -->
+      <h2 data-lang="terms.s2_title">2. Certificate Verification</h2>
+      <p data-lang="terms.s2_text">The Certificate Verification tool is provided as a public service to confirm the authenticity of Tensor Academy certificates. Users must only verify certificates they have a legitimate interest in. Any attempt to misuse, reverse-engineer, or exploit the verification system is strictly prohibited.</p>
 
-        <h2>۴. صحت اطلاعات</h2>
-        <p>ما تلاش می‌کنیم تمام اطلاعات دقیق و به‌روز باشند. با این حال، هیچ ضمانتی در مورد کامل بودن یا صحت محتوای سایت ارائه نمی‌دهیم. در دسترس بودن دوره‌ها، توضیحات و زمان‌بندی ممکن است بدون اطلاع قبلی تغییر کند.</p>
+      <!-- Section 3: Accuracy of Information -->
+      <h2 data-lang="terms.s3_title">3. Accuracy of Information</h2>
+      <p data-lang="terms.s3_text">We strive to keep all information on our website accurate and up-to-date. However, Tensor Academy makes no warranties or representations regarding the completeness or accuracy of the content. Course details, schedules, and availability may change without prior notice.</p>
 
-        <h2>۵. اقدامات ممنوعه</h2>
-        <p>شما موافقت می‌کنید که:</p>
-        <ul>
-          <li>از سایت برای اهداف غیرقانونی یا نقض قوانین استفاده نکنید.</li>
-          <li>تلاشی برای دسترسی غیرمجاز به هیچ بخشی از سایت یا سیستم‌های آن نکنید.</li>
-          <li>از سیستم تأیید گواهی سوءاستفاده نکنید یا اقدام به جعل گواهی نکنید.</li>
-          <li>هیچ فعالیتی که عملکرد صحیح سایت را مختل کند انجام ندهید.</li>
-        </ul>
+      <!-- Section 4: Prohibited Actions -->
+      <h2 data-lang="terms.s4_title">4. Prohibited Actions</h2>
+      <p data-lang="terms.s4_text">When using our website, you agree not to:</p>
+      <ul>
+        <li data-lang="terms.s4_item1">Attempt to gain unauthorized access to any part of the website</li>
+        <li data-lang="terms.s4_item2">Use the website for any unlawful purpose</li>
+        <li data-lang="terms.s4_item3">Interfere with the proper functioning of the website</li>
+        <li data-lang="terms.s4_item4">Submit false or misleading information through any form</li>
+      </ul>
 
-        <h2>۶. خدمات خارجی</h2>
-        <p>وب‌سایت ما ممکن است به پلتفرم‌های ثالث مانند تلگرام، دیسکورد و گوگل میت لینک دهد. ما مسئولیتی در قبال محتوا، در دسترس بودن یا شیوه‌های این خدمات خارجی نداریم. استفاده از آن‌ها به عهده و مسئولیت خودتان و مشروط به شرایط آن‌هاست.</p>
+      <!-- Section 5: External Services -->
+      <h2 data-lang="terms.s5_title">5. External Services</h2>
+      <p data-lang="terms.s5_text">Our website integrates with third-party platforms (such as Telegram and Discord) for communication and course delivery. We are not responsible for the content, policies, or practices of these external services. Your use of those platforms is subject to their respective terms.</p>
 
-        <h2>۷. تغییرات شرایط</h2>
-        <p>ما حق تغییر این شرایط استفاده را در هر زمان محفوظ می‌داریم. شرایط به‌روزرسانی‌شده در این صفحه منتشر خواهد شد. ادامهٔ استفاده از سایت پس از تغییرات به‌معنای پذیرش شرایط جدید است.</p>
+      <!-- Section 6: Changes to Terms -->
+      <h2 data-lang="terms.s6_title">6. Changes to Terms</h2>
+      <p data-lang="terms.s6_text">We reserve the right to modify these Terms of Use at any time. Changes will be effective immediately upon posting. Your continued use of the website after any modifications constitutes acceptance of the updated terms.</p>
 
-        <h2>۸. تماس</h2>
-        <p>برای سوالات مربوط به این شرایط، با ما در <a href="mailto:tensor.ai.academy@gmail.com">tensor.ai.academy@gmail.com</a> تماس بگیرید.</p>
-      </div>
+      <!-- Section 7: Contact -->
+      <h2 data-lang="terms.s7_title">7. Contact</h2>
+      <p data-lang="terms.s7_text">If you have questions about these Terms of Use, please contact us at tensor.ai.academy@gmail.com or via Telegram at @Tensor_academy_maneger.</p>
+      <ul>
+        <li>Email: <a href="mailto:tensor.ai.academy@gmail.com">tensor.ai.academy@gmail.com</a></li>
+        <li>Telegram: <a href="https://t.me/Tensor_academy_maneger" target="_blank" rel="noopener noreferrer">@Tensor_academy_maneger</a></li>
+      </ul>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <img src="assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="footer-logo" width="40" height="40">
-        <span>Tensor Academy</span>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div>
+          <div class="footer__brand-name">Tensor Academy</div>
+          <p class="footer__brand-tagline" data-lang="footer.tagline">Learn AI. Shape the Future.</p>
+        </div>
+        <div>
+          <div class="footer__heading" data-lang="footer.quickLinks">Quick Links</div>
+          <div class="footer__links">
+            <a href="index.html" class="footer__link" data-lang="nav.about">About</a>
+            <a href="index.html#courses" class="footer__link" data-lang="nav.courses">Courses</a>
+            <a href="privacy.html" class="footer__link" data-lang="nav.privacy">Privacy Policy</a>
+            <a href="terms.html" class="footer__link" data-lang="nav.terms">Terms of Use</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__heading" data-lang="footer.contactHeading">Contact</div>
+          <div class="footer__links">
+            <a href="mailto:tensor.ai.academy@gmail.com" class="footer__link">tensor.ai.academy@gmail.com</a>
+            <a href="https://t.me/Tensor_academy_maneger" target="_blank" rel="noopener noreferrer" class="footer__link">Telegram: @Tensor_academy_maneger</a>
+          </div>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="verify.html" data-i18n="footer_verify">Certificate Verification</a>
-        <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
-        <a href="terms.html" data-i18n="footer_terms">Terms of Use</a>
-        <a href="index.html#contact" data-i18n="footer_contact">Contact</a>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Tensor Academy. <span data-lang="footer.rights">All rights reserved.</span></p>
       </div>
-      <p class="footer-copy" data-i18n="footer_copy">© 2026 Tensor Academy. All rights reserved.</p>
     </div>
   </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+  <div class="toast" id="toast" aria-live="polite"></div>
 
   <script src="js/app.js"></script>
 </body>
