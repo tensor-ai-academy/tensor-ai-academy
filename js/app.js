@@ -202,6 +202,21 @@
       'terms.s6_text': 'We reserve the right to modify these Terms of Use at any time. Changes will be effective immediately upon posting. Your continued use of the website after any modifications constitutes acceptance of the updated terms.',
       'terms.s7_title': '7. Contact',
       'terms.s7_text': 'If you have questions about these Terms of Use, please contact us at tensor.ai.academy@gmail.com or via Telegram at @Tensor_academy_maneger.',
+
+      // Certificate Detail Page
+      'certificate.studentName': 'Student Name',
+      'certificate.fatherName': "Father's Name",
+      'certificate.course': 'Course',
+      'certificate.level': 'Level',
+      'certificate.instructor': 'Instructor',
+      'certificate.duration': 'Duration',
+      'certificate.startDate': 'Start Date',
+      'certificate.endDate': 'End Date',
+      'certificate.issueDate': 'Issue Date',
+      'certificate.score': 'Score',
+      'certificate.grade': 'Grade',
+      'certificate.status': 'Status',
+      'certificate.achievementsTitle': 'Special Achievements'
     },
     fa: {
       // Header & Navigation
@@ -387,6 +402,21 @@
       'terms.s6_text': 'ما حق تغییر این شرایط استفاده را در هر زمان برای خود محفوظ می‌داریم. تغییرات بلافاصله پس از انتشار معتبر خواهند بود. ادامه استفاده شما از وب‌سایت پس از هرگونه تغییر به‌منزله پذیرش شرایط جدید است.',
       'terms.s7_title': '۷. تماس',
       'terms.s7_text': 'اگر سوالی درباره این شرایط استفاده دارید، با ما از طریق ایمیل tensor.ai.academy@gmail.com یا تلگرام @Tensor_academy_maneger تماس بگیرید.',
+
+      // Certificate Detail Page
+      'certificate.studentName': 'نام دانشجو',
+      'certificate.fatherName': 'نام پدر',
+      'certificate.course': 'دوره',
+      'certificate.level': 'سطح',
+      'certificate.instructor': 'مدرس',
+      'certificate.duration': 'مدت دوره',
+      'certificate.startDate': 'تاریخ شروع',
+      'certificate.endDate': 'تاریخ پایان',
+      'certificate.issueDate': 'تاریخ صدور',
+      'certificate.score': 'نمره',
+      'certificate.grade': 'رتبه',
+      'certificate.status': 'وضعیت',
+      'certificate.achievementsTitle': 'دستاوردهای ویژه'
     }
   };
 
@@ -701,10 +731,6 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
-
-    // Re-apply language to dynamically created content when language changes
-    // (already covered via applyLanguage re-rendering the whole DOM; but for verification result,
-    // we handle via refreshVerificationResults)
   }
 
   /*========================
