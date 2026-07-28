@@ -17,7 +17,7 @@
   <title>Tensor Academy — Learn AI. Shape the Future.</title>
   <link rel="icon" type="image/png" href="assets/images/tensor-academy-logo.png">
   <link rel="stylesheet" href="css/style.css">
-  <!-- Prevent FOUC for Dark Mode -->
+  <!-- Anti-FOUC for Dark Mode -->
   <script>
     (function() {
       const savedTheme = localStorage.getItem('tensor-theme');
@@ -29,7 +29,7 @@
 </head>
 <body>
 
-  <!-- Header / Navigation -->
+  <!-- Header -->
   <header class="site-header" id="siteHeader">
     <div class="container header-container">
       <a href="index.html" class="logo-link" aria-label="Tensor Academy Home">
@@ -40,6 +40,7 @@
         </div>
       </a>
 
+      <!-- Desktop Navigation (limited) -->
       <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
         <ul class="nav-list">
           <li><a href="#about" data-i18n="nav_about">About</a></li>
@@ -58,20 +59,35 @@
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
           <span class="theme-icon">🌙</span>
         </button>
+        <!-- Hamburger Menu Button (full menu) -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Full Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
-
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
     </div>
+
+    <!-- Fullscreen Overlay Menu -->
+    <nav class="fullscreen-menu" id="fullscreenMenu" aria-label="Full Navigation">
+      <ul class="fullscreen-nav-list">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#courses" data-i18n="nav_courses">Courses</a></li>
+        <li><a href="#certificates" data-i18n="nav_certificates">Certificates</a></li>
+        <li><a href="verify.html" data-i18n="nav_verify">Verify Certificate</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+        <li><a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a></li>
+        <li><a href="terms.html" data-i18n="nav_terms">Terms of Use</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main id="mainContent">
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <section class="hero reveal" id="hero">
       <div class="container hero-content">
         <p class="hero-eyebrow" data-i18n="hero_eyebrow">Modern AI Academic Platform</p>
         <h1 class="hero-title" data-i18n="hero_title">Learn AI. Shape the Future.</h1>
@@ -84,11 +100,11 @@
         </div>
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-number">5000+</span>
+            <span class="stat-number count-up" data-target="5000">0</span>
             <span class="stat-label" data-i18n="stat_students">Students</span>
           </div>
           <div class="stat-item">
-            <span class="stat-number">200+</span>
+            <span class="stat-number count-up" data-target="200">0</span>
             <span class="stat-label" data-i18n="stat_graduates">Graduates</span>
           </div>
           <div class="stat-item">
@@ -100,13 +116,32 @@
     </section>
 
     <!-- About Section -->
-    <section class="about section-padding" id="about">
+    <section class="about section-padding reveal" id="about">
       <div class="container">
         <h2 class="section-title" data-i18n="about_title">About Tensor Academy</h2>
         <div class="about-grid">
           <div class="about-text">
-            <p data-i18n="about_description">
-              Tensor Academy is a private online AI academy focused on AI education, career readiness, practical skills, and effective use of artificial intelligence.
+            <!-- English -->
+            <div class="lang-en">
+              <p>Tensor Academy is a private online educational academy dedicated to advancing knowledge and practical skills in Artificial Intelligence and emerging technologies. Our academic approach is focused on developing knowledgeable, capable, and future-ready individuals who can understand, apply, and responsibly engage with technologies shaping the modern world.</p>
+              <p>Through structured learning pathways at Beginner, Semi-Specialist, and Specialist levels, Tensor Academy provides educational opportunities in key areas of AI, including Machine Learning, Deep Learning, Prompt Engineering, AI Applications, AI Chatbots, and practical AI technologies.</p>
+              <p>Our learning environment is designed to bridge the gap between theoretical understanding and practical application, enabling learners to develop relevant technical skills, explore real-world AI use cases, and build the confidence required to work with rapidly evolving technologies.</p>
+              <p>Beyond technical education, Tensor Academy is committed to helping learners discover professional opportunities, improve their employability, develop AI-powered skills, and explore legitimate ways to generate income through the effective application of artificial intelligence.</p>
+              <p>Our broader goal is to contribute to the development of an informed and capable AI community—one that can use emerging technologies effectively, recognize their potential risks and challenges, and contribute positively to a more innovative and technologically empowered society.</p>
+            </div>
+            <!-- Persian -->
+            <div class="lang-fa">
+              <p>آکادمی تنسور یک آکادمی آموزشی خصوصی و آنلاین است که با هدف توسعه دانش و مهارت‌های عملی در زمینه هوش مصنوعی و فناوری‌های نوظهور فعالیت می‌کند. رویکرد آموزشی ما بر پرورش افراد آگاه، توانمند و آماده برای آینده متمرکز است؛ افرادی که بتوانند فناوری‌های شکل‌دهنده دنیای مدرن را به‌درستی درک کرده، به‌صورت مؤثر به‌کار گیرند و با مسئولیت‌پذیری با آن‌ها تعامل داشته باشند.</p>
+              <p>آکادمی تنسور از طریق مسیرهای آموزشی ساختاریافته در سه سطح مبتدی، نیمه تخصصی و تخصصی، زمینه یادگیری در حوزه‌های کلیدی هوش مصنوعی از جمله یادگیری ماشین، یادگیری عمیق، مهندسی پرامپت، کاربردهای هوش مصنوعی، چت‌بات‌های هوش مصنوعی و فناوری‌های عملی مبتنی بر AI را فراهم می‌سازد.</p>
+              <p>محیط آموزشی آکادمی با هدف ایجاد پیوند میان درک نظری و کاربرد عملی طراحی شده است تا دانشجویان بتوانند مهارت‌های فنی مرتبط را توسعه دهند، کاربردهای واقعی هوش مصنوعی را بررسی کنند و اعتمادبه‌نفس لازم برای کار با فناوری‌های به‌سرعت در حال تحول را به دست آورند.</p>
+              <p>فراتر از آموزش مهارت‌های فنی، آکادمی تنسور متعهد است به دانشجویان در شناخت فرصت‌های حرفه‌ای، افزایش قابلیت اشتغال، توسعه مهارت‌های مبتنی بر هوش مصنوعی و کشف راه‌های مشروع برای کسب درآمد از طریق یادگیری و استفاده مؤثر از هوش مصنوعی کمک کند.</p>
+              <p>هدف گسترده‌تر ما کمک به شکل‌گیری جامعه‌ای آگاه و توانمند در حوزه هوش مصنوعی است؛ جامعه‌ای که بتواند از فناوری‌های نوظهور به‌صورت مؤثر استفاده کند، خطرات و چالش‌های احتمالی آن‌ها را بشناسد و در ایجاد جامعه‌ای نوآور، آگاه و توانمند از نظر فناوری نقش مثبتی ایفا کند.</p>
+            </div>
+          </div>
+          <div class="about-vision">
+            <h3 data-i18n="about_vision_title">Our Vision</h3>
+            <p data-i18n="about_vision_text">
+              We help learners build practical AI skills, understand modern artificial intelligence technologies, use AI effectively, and prepare themselves for future career and income opportunities.
             </p>
             <ul class="about-details">
               <li><strong data-i18n="about_founder_label">Founder:</strong> <span data-i18n="about_founder_value">Mohammad Omar Omari</span></li>
@@ -116,18 +151,12 @@
               <li><strong data-i18n="about_field_label">Field:</strong> <span data-i18n="about_field_value">Artificial Intelligence Education</span></li>
             </ul>
           </div>
-          <div class="about-vision">
-            <h3 data-i18n="about_vision_title">Our Vision</h3>
-            <p data-i18n="about_vision_text">
-              We help learners build practical AI skills, understand modern artificial intelligence technologies, use AI effectively, and prepare themselves for future career and income opportunities.
-            </p>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- Courses Section -->
-    <section class="courses section-padding" id="courses">
+    <section class="courses section-padding reveal" id="courses">
       <div class="container">
         <h2 class="section-title" data-i18n="courses_title">Our Courses</h2>
         <div class="courses-grid">
@@ -176,11 +205,11 @@
     </section>
 
     <!-- Certificates Section (general) -->
-    <section class="certificates section-padding" id="certificates">
+    <section class="certificates section-padding reveal" id="certificates">
       <div class="container">
         <h2 class="section-title" data-i18n="certificates_title">Certificates</h2>
         <p class="section-subtitle" data-i18n="certificates_subtitle">
-          Every graduate receives a verifiable certificate with a unique ID, QR code, and dedicated online page.
+          Every graduate receives a verifiable certificate with a unique ID and dedicated online page.
         </p>
         <div class="certificate-features">
           <div class="feature-item">
@@ -201,7 +230,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact section-padding" id="contact">
+    <section class="contact section-padding reveal" id="contact">
       <div class="container">
         <h2 class="section-title" data-i18n="contact_title">Contact Us</h2>
         <div class="contact-grid">
@@ -225,40 +254,71 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq section-padding" id="faq">
+    <section class="faq section-padding reveal" id="faq">
       <div class="container">
         <h2 class="section-title" data-i18n="faq_title">Frequently Asked Questions</h2>
         <div class="accordion">
+          <!-- Question 1 -->
           <div class="accordion-item">
-            <button class="accordion-trigger" aria-expanded="false" data-i18n="faq_q1">
-              Is Tensor Academy bilingual?
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="lang-en">What is Tensor Academy?</span>
+              <span class="lang-fa">آکادمی تنسور چیست؟</span>
             </button>
-            <div class="accordion-panel" data-i18n="faq_a1">
-              Yes. The website supports English and Persian / Dari.
+            <div class="accordion-panel">
+              <p class="lang-en">Tensor Academy is a private online academy focused on Artificial Intelligence and emerging technologies.</p>
+              <p class="lang-fa">آکادمی تنسور یک آکادمی آموزشی خصوصی و آنلاین با تمرکز بر هوش مصنوعی و فناوری‌های نوظهور است.</p>
             </div>
           </div>
+          <!-- Question 2 -->
           <div class="accordion-item">
-            <button class="accordion-trigger" aria-expanded="false" data-i18n="faq_q2">
-              Does the site support certificate verification?
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="lang-en">What can I learn at Tensor Academy?</span>
+              <span class="lang-fa">در آکادمی تنسور چه چیزهایی می‌توانم یاد بگیرم؟</span>
             </button>
-            <div class="accordion-panel" data-i18n="faq_a2">
-              Yes. Each certificate can have its own verification page and dedicated URL.
+            <div class="accordion-panel">
+              <p class="lang-en">You can learn Machine Learning, Deep Learning, Prompt Engineering, AI Applications, and AI Chatbots at different learning levels.</p>
+              <p class="lang-fa">می‌توانید یادگیری ماشین، یادگیری عمیق، مهندسی پرامپت، کاربردهای هوش مصنوعی و چت‌بات‌های هوش مصنوعی را در سطوح مختلف یاد بگیرید.</p>
             </div>
           </div>
+          <!-- Question 3 -->
           <div class="accordion-item">
-            <button class="accordion-trigger" aria-expanded="false" data-i18n="faq_q3">
-              Can certificates be viewed and downloaded?
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="lang-en">Who can join Tensor Academy?</span>
+              <span class="lang-fa">چه کسانی می‌توانند در آکادمی تنسور شرکت کنند؟</span>
             </button>
-            <div class="accordion-panel" data-i18n="faq_a3">
-              Yes. Certificates can be viewed online and downloaded as PDF files.
+            <div class="accordion-panel">
+              <p class="lang-en">Anyone interested in AI and technology can join, from beginners to advanced learners.</p>
+              <p class="lang-fa">هر فرد علاقه‌مند به هوش مصنوعی و فناوری می‌تواند شرکت کند؛ از مبتدیان تا افراد پیشرفته.</p>
+            </div>
+          </div>
+          <!-- Question 4 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="lang-en">How can I register for a course?</span>
+              <span class="lang-fa">چگونه در یک دوره ثبت‌نام کنم؟</span>
+            </button>
+            <div class="accordion-panel">
+              <p class="lang-en">Course registration is available through Telegram by contacting the Tensor Academy manager.</p>
+              <p class="lang-fa">ثبت‌نام دوره‌ها از طریق تلگرام و با ارتباط با مدیر آکادمی تنسور انجام می‌شود.</p>
+            </div>
+          </div>
+          <!-- Question 5 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="lang-en">How can I verify a Tensor Academy certificate?</span>
+              <span class="lang-fa">چگونه تصدیق‌نامه آکادمی تنسور را تأیید کنم؟</span>
+            </button>
+            <div class="accordion-panel">
+              <p class="lang-en">Enter the unique Certificate ID in the Certificate Verification section to verify the certificate.</p>
+              <p class="lang-fa">آیدی منحصربه‌فرد تصدیق‌نامه را در بخش تأیید تصدیق‌نامه وارد کنید تا اعتبار آن بررسی شود.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Recognition / License -->
-    <section class="recognition section-padding" id="recognition">
+    <!-- Recognition Section -->
+    <section class="recognition section-padding reveal" id="recognition">
       <div class="container">
         <h2 class="section-title" data-i18n="recognition_title">Recognition</h2>
         <div class="recognition-card">
