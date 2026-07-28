@@ -1,6 +1,6 @@
 /* ============================================================
-   TENSOR ACADEMY — Main Application Script
-   Language, Theme, Navigation, Accordion, Verification, Bilingual
+   TENSOR ACADEMY — Premium Application Script
+   Fullscreen Menu, Reveal, Count‑Up, Digit Conversion, i18n
    ============================================================ */
 (function () {
   'use strict';
@@ -9,12 +9,15 @@
   const i18n = {
     en: {
       tagline: 'Learn AI. Shape the Future.',
+      nav_home: 'Home',
       nav_about: 'About',
       nav_courses: 'Courses',
       nav_certificates: 'Certificates',
+      nav_verify: 'Verify Certificate',
       nav_contact: 'Contact',
       nav_faq: 'FAQ',
-      nav_verify: 'Verify Certificate',
+      nav_privacy: 'Privacy Policy',
+      nav_terms: 'Terms of Use',
       hero_eyebrow: 'Modern AI Academic Platform',
       hero_title: 'Learn AI. Shape the Future.',
       hero_description: 'Tensor Academy is a bilingual online academy for Deep Learning, Machine Learning, Prompt Engineering, and AI apps/chatbots.',
@@ -24,7 +27,8 @@
       stat_graduates: 'Graduates',
       stat_levels: 'Learning Levels',
       about_title: 'About Tensor Academy',
-      about_description: 'Tensor Academy is a private online AI academy focused on AI education, career readiness, practical skills, and effective use of artificial intelligence.',
+      about_vision_title: 'Our Vision',
+      about_vision_text: 'We help learners build practical AI skills, understand modern artificial intelligence technologies, use AI effectively, and prepare themselves for future career and income opportunities.',
       about_founder_label: 'Founder:',
       about_founder_value: 'Mohammad Omar Omari',
       about_type_label: 'Type:',
@@ -35,8 +39,6 @@
       about_platforms_value: 'Telegram, Discord, Google Meet',
       about_field_label: 'Field:',
       about_field_value: 'Artificial Intelligence Education',
-      about_vision_title: 'Our Vision',
-      about_vision_text: 'We help learners build practical AI skills, understand modern artificial intelligence technologies, use AI effectively, and prepare themselves for future career and income opportunities.',
       courses_title: 'Our Courses',
       course_dl_desc: 'Foundations, practice, and real-world applications.',
       course_ml_desc: 'Data-driven models, training workflows, and evaluation.',
@@ -46,7 +48,7 @@
       level_semi: 'Semi-specialized',
       level_specialized: 'Specialized',
       certificates_title: 'Certificates',
-      certificates_subtitle: 'Every graduate receives a verifiable certificate with a unique ID, QR code, and dedicated online page.',
+      certificates_subtitle: 'Every graduate receives a verifiable certificate with a unique ID and dedicated online page.',
       cert_feat_verifiable: 'Verifiable Online',
       cert_feat_unique: 'Unique Certificate ID',
       cert_feat_pdf: 'Downloadable PDF',
@@ -55,12 +57,6 @@
       contact_email_label: 'Email',
       contact_social_label: 'Social & Learning',
       faq_title: 'Frequently Asked Questions',
-      faq_q1: 'Is Tensor Academy bilingual?',
-      faq_a1: 'Yes. The website supports English and Persian / Dari.',
-      faq_q2: 'Does the site support certificate verification?',
-      faq_a2: 'Yes. Each certificate can have its own verification page and dedicated URL.',
-      faq_q3: 'Can certificates be viewed and downloaded?',
-      faq_a3: 'Yes. Certificates can be viewed online and downloaded as PDF files.',
       recognition_title: 'Recognition',
       recog_authority_label: 'Authority:',
       recog_authority_value: 'Ministry of Higher Education Afghanistan',
@@ -87,12 +83,15 @@
     },
     fa: {
       tagline: 'هوش مصنوعی را بیاموز، آینده را بساز',
+      nav_home: 'خانه',
       nav_about: 'دربارهٔ ما',
       nav_courses: 'دوره‌ها',
       nav_certificates: 'گواهی‌نامه‌ها',
+      nav_verify: 'تأیید گواهی‌نامه',
       nav_contact: 'تماس',
       nav_faq: 'سوالات متداول',
-      nav_verify: 'تأیید گواهی‌نامه',
+      nav_privacy: 'سیاست حفظ حریم خصوصی',
+      nav_terms: 'شرایط استفاده',
       hero_eyebrow: 'پلتفرم مدرن آموزش هوش مصنوعی',
       hero_title: 'هوش مصنوعی را بیاموز، آینده را بساز',
       hero_description: 'آکادمی تنسور یک آکادمی آنلاین دو زبانه برای یادگیری عمیق، یادگیری ماشین، مهندسی پرامپت و اپلیکیشن‌ها و چت‌بات‌های هوش مصنوعی است.',
@@ -102,7 +101,8 @@
       stat_graduates: 'فارغ‌التحصیل',
       stat_levels: 'سطح آموزشی',
       about_title: 'دربارهٔ آکادمی تنسور',
-      about_description: 'آکادمی تنسور یک آکادمی خصوصی آنلاین در حوزهٔ هوش مصنوعی است که بر آموزش هوش مصنوعی، آمادگی شغلی، مهارت‌های عملی و استفادهٔ مؤثر از هوش مصنوعی تمرکز دارد.',
+      about_vision_title: 'چشم‌انداز ما',
+      about_vision_text: 'ما به یادگیرندگان کمک می‌کنیم مهارت‌های عملی هوش مصنوعی را کسب کنند، با فناوری‌های نوین آشنا شوند، از هوش مصنوعی به‌طور مؤثر استفاده کنند و برای فرصت‌های شغلی و درآمدی آینده آماده شوند.',
       about_founder_label: 'بنیان‌گذار:',
       about_founder_value: 'محمد عمر عمری',
       about_type_label: 'نوع:',
@@ -113,8 +113,6 @@
       about_platforms_value: 'تلگرام، دیسکورد، گوگل میت',
       about_field_label: 'حوزه:',
       about_field_value: 'آموزش هوش مصنوعی',
-      about_vision_title: 'چشم‌انداز ما',
-      about_vision_text: 'ما به یادگیرندگان کمک می‌کنیم مهارت‌های عملی هوش مصنوعی را کسب کنند، با فناوری‌های نوین آشنا شوند، از هوش مصنوعی به‌طور مؤثر استفاده کنند و برای فرصت‌های شغلی و درآمدی آینده آماده شوند.',
       courses_title: 'دوره‌های ما',
       course_dl_desc: 'مبانی، تمرین و کاربردهای واقعی.',
       course_ml_desc: 'مدل‌های داده‌محور، روند آموزش و ارزیابی.',
@@ -124,7 +122,7 @@
       level_semi: 'نیمه‌تخصصی',
       level_specialized: 'تخصصی',
       certificates_title: 'گواهی‌نامه‌ها',
-      certificates_subtitle: 'هر فارغ‌التحصیل یک گواهی‌نامهٔ قابل تأیید با شناسهٔ یکتا، کیوآرکد و صفحهٔ اختصاصی آنلاین دریافت می‌کند.',
+      certificates_subtitle: 'هر فارغ‌التحصیل یک گواهی‌نامهٔ قابل تأیید با شناسهٔ یکتا و صفحهٔ اختصاصی آنلاین دریافت می‌کند.',
       cert_feat_verifiable: 'قابل تأیید آنلاین',
       cert_feat_unique: 'شناسهٔ یکتای گواهی',
       cert_feat_pdf: 'قابل دانلود به‌صورت PDF',
@@ -133,12 +131,6 @@
       contact_email_label: 'ایمیل',
       contact_social_label: 'شبکه‌های اجتماعی و آموزشی',
       faq_title: 'سوالات متداول',
-      faq_q1: 'آیا آکادمی تنسور دو زبانه است؟',
-      faq_a1: 'بله. وب‌سایت از زبان انگلیسی و فارسی/دری پشتیبانی می‌کند.',
-      faq_q2: 'آیا سایت از تأیید گواهی‌نامه پشتیبانی می‌کند؟',
-      faq_a2: 'بله. هر گواهی‌نامه می‌تواند صفحهٔ تأیید و آدرس اینترنتی اختصاصی خود را داشته باشد.',
-      faq_q3: 'آیا گواهی‌نامه‌ها قابل مشاهده و دانلود هستند؟',
-      faq_a3: 'بله. گواهی‌نامه‌ها به‌صورت آنلاین قابل مشاهده و به‌عنوان فایل PDF قابل دانلود هستند.',
       recognition_title: 'اعتبار',
       recog_authority_label: 'مرجع:',
       recog_authority_value: 'وزارت تحصیلات عالی افغانستان',
@@ -165,7 +157,23 @@
     }
   };
 
-  /* ---------- Utility Functions ---------- */
+  /* ---------- Utility: Persian/Western digit conversion ---------- */
+  const persianDigits = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+  function toPersianDigits(str) {
+    return str.replace(/\d/g, d => persianDigits[d]);
+  }
+  function toWesternDigits(str) {
+    return str.replace(/[۰-۹]/g, d => persianDigits.indexOf(d).toString());
+  }
+  function convertDigits(lang) {
+    document.querySelectorAll('[data-digits="true"]').forEach(el => {
+      const original = el.getAttribute('data-original') || el.textContent;
+      if (!el.getAttribute('data-original')) el.setAttribute('data-original', original);
+      el.textContent = lang === 'fa' ? toPersianDigits(original) : toWesternDigits(original);
+    });
+  }
+
+  /* ---------- Language & Theme ---------- */
   const getLang = () => localStorage.getItem('tensor-lang') || 'en';
   const setLang = (lang) => localStorage.setItem('tensor-lang', lang);
   const getTheme = () => localStorage.getItem('tensor-theme') || 'light';
@@ -176,7 +184,7 @@
     document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
     const titleEl = document.querySelector('title');
     if (titleEl) {
-      titleEl.textContent = lang === 'fa' 
+      titleEl.textContent = lang === 'fa'
         ? 'آکادمی تنسور — هوش مصنوعی را بیاموز، آینده را بساز'
         : 'Tensor Academy — Learn AI. Shape the Future.';
     }
@@ -189,29 +197,23 @@
   }
 
   function applyTranslations(lang) {
-    // Elements with data-i18n
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(el => {
+    // data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if (i18n[lang] && i18n[lang][key]) {
-        el.textContent = i18n[lang][key];
-      }
+      if (i18n[lang] && i18n[lang][key]) el.textContent = i18n[lang][key];
     });
-    // Elements with data-i18n-placeholder (for inputs)
-    const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
-    placeholders.forEach(el => {
+    // data-i18n-placeholder
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
       const key = el.getAttribute('data-i18n-placeholder');
-      if (i18n[lang] && i18n[lang][key]) {
-        el.setAttribute('placeholder', i18n[lang][key]);
-      }
+      if (i18n[lang] && i18n[lang][key]) el.setAttribute('placeholder', i18n[lang][key]);
     });
-    // Platforms special case
+    // Special platforms li
     const platformsLi = document.querySelector('.about-details li:nth-child(4)');
     if (platformsLi && i18n[lang].about_platforms_label && i18n[lang].about_platforms_value) {
       platformsLi.innerHTML = `<strong>${i18n[lang].about_platforms_label}</strong> ${i18n[lang].about_platforms_value}`;
     }
-    // Bilingual static blocks: lang-en / lang-fa visibility is handled by CSS based on html[lang]
-    // No further action needed.
+    // Digit conversion
+    convertDigits(lang);
   }
 
   function switchLanguage() {
@@ -228,11 +230,7 @@
   }
 
   function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.toggle('dark', theme === 'dark');
     const themeBtn = document.getElementById('themeToggle');
     if (themeBtn) {
       const icon = themeBtn.querySelector('.theme-icon');
@@ -247,22 +245,73 @@
     applyTheme(next);
   }
 
-  /* ---------- Mobile Menu ---------- */
-  function initMobileMenu() {
+  /* ---------- Fullscreen Menu ---------- */
+  function initFullscreenMenu() {
     const menuBtn = document.getElementById('mobileMenuBtn');
-    const nav = document.getElementById('mainNav');
-    if (!menuBtn || !nav) return;
+    const menu = document.getElementById('fullscreenMenu');
+    if (!menuBtn || !menu) return;
+
     menuBtn.addEventListener('click', () => {
       const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
       menuBtn.setAttribute('aria-expanded', !expanded);
-      nav.classList.toggle('open');
+      menu.classList.toggle('open');
     });
-    nav.querySelectorAll('a').forEach(link => {
+
+    // Close menu on link click
+    menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        nav.classList.remove('open');
+        menu.classList.remove('open');
         menuBtn.setAttribute('aria-expanded', 'false');
       });
     });
+  }
+
+  /* ---------- Reveal on Scroll (Intersection Observer) ---------- */
+  function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+  }
+
+  /* ---------- Count‑Up Animation ---------- */
+  function animateCountUp(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    if (isNaN(target)) return;
+    const lang = getLang();
+    const suffix = el.getAttribute('data-suffix') || '';
+    let current = 0;
+    const duration = 1500;
+    const start = performance.now();
+
+    function step(timestamp) {
+      const progress = Math.min((timestamp - start) / duration, 1);
+      current = Math.floor(progress * target);
+      const rawText = current + suffix;
+      el.textContent = lang === 'fa' ? toPersianDigits(rawText) : rawText;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function initCountUp() {
+    const counters = document.querySelectorAll('.count-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCountUp(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => observer.observe(el));
   }
 
   /* ---------- Accordion ---------- */
@@ -275,8 +324,7 @@
         document.querySelectorAll('.accordion-panel').forEach(p => p.classList.remove('open'));
         if (!expanded) {
           this.setAttribute('aria-expanded', 'true');
-          const panel = this.nextElementSibling;
-          if (panel) panel.classList.add('open');
+          this.nextElementSibling?.classList.add('open');
         }
       });
     });
@@ -303,9 +351,7 @@
     if (!form) return;
     const input = document.getElementById('certId');
     const errorMsg = document.getElementById('verifyError');
-    if (!input || !errorMsg) return;
-
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
       const id = input.value.trim();
       if (!id) {
@@ -318,11 +364,10 @@
         showError(i18n[getLang()].verify_error_notfound);
       }
     });
-
     function showError(msg) {
       errorMsg.textContent = msg;
       errorMsg.style.display = 'block';
-      setTimeout(() => { errorMsg.style.display = 'none'; }, 5000);
+      setTimeout(() => errorMsg.style.display = 'none', 5000);
     }
   }
 
@@ -340,20 +385,15 @@
 
     const savedTheme = getTheme();
     applyTheme(savedTheme);
-    const themeBtn = document.getElementById('themeToggle');
-    if (themeBtn) {
-      themeBtn.addEventListener('click', toggleTheme);
-    }
+    document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
 
-    initMobileMenu();
+    initFullscreenMenu();
+    initReveal();
+    initCountUp();
     initAccordion();
     initSmoothScroll();
     initVerification();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
 })();
