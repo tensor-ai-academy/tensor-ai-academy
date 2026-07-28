@@ -49,19 +49,32 @@
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
           <span class="theme-icon">🌙</span>
         </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Full Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
-
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
     </div>
+
+    <nav class="fullscreen-menu" id="fullscreenMenu" aria-label="Full Navigation">
+      <ul class="fullscreen-nav-list">
+        <li><a href="../../index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="../../index.html#about" data-i18n="nav_about">About</a></li>
+        <li><a href="../../index.html#courses" data-i18n="nav_courses">Courses</a></li>
+        <li><a href="../../index.html#certificates" data-i18n="nav_certificates">Certificates</a></li>
+        <li><a href="../../verify.html" data-i18n="nav_verify">Verify Certificate</a></li>
+        <li><a href="../../index.html#contact" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="../../index.html#faq" data-i18n="nav_faq">FAQ</a></li>
+        <li><a href="../../privacy.html" data-i18n="nav_privacy">Privacy Policy</a></li>
+        <li><a href="../../terms.html" data-i18n="nav_terms">Terms of Use</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main id="mainContent" class="certificate-page">
-    <article class="container certificate-container section-padding">
-      
+    <article class="container certificate-container section-padding reveal">
+
       <!-- Certificate Header -->
       <div class="cert-header text-center">
         <img src="../../assets/images/tensor-academy-logo.png" alt="Tensor Academy Logo" class="cert-logo" width="80" height="80">
@@ -74,7 +87,6 @@
 
       <!-- Certificate Body Grid -->
       <div class="cert-body-grid">
-        <!-- Student Info -->
         <div class="cert-field">
           <strong class="cert-label">
             <span class="lang-en">Student Name</span>
@@ -124,7 +136,7 @@
             <span class="lang-en">Duration</span>
             <span class="lang-fa">مدت</span>
           </strong>
-          <span class="cert-value">60 <span class="lang-en">hours</span><span class="lang-fa">ساعت</span></span>
+          <span class="cert-value" data-digits="true">60 <span class="lang-en">hours</span><span class="lang-fa">ساعت</span></span>
         </div>
 
         <div class="cert-field">
@@ -156,7 +168,7 @@
             <span class="lang-en">Score</span>
             <span class="lang-fa">نمره</span>
           </strong>
-          <span class="cert-value">91.85%</span>
+          <span class="cert-value" data-digits="true">91.85%</span>
         </div>
 
         <div class="cert-field">
@@ -211,18 +223,7 @@
           <span class="lang-fa">تصویر گواهی‌نامه</span>
         </p>
         <div class="placeholder-box" aria-label="Certificate image placeholder">
-          <!-- Replace with <img src="path-to-real-certificate-image.png" alt="Certificate Image"> in future -->
-        </div>
-      </div>
-
-      <!-- QR Code Placeholder (for future) -->
-      <div class="cert-qr-placeholder text-center">
-        <p class="text-muted">
-          <span class="lang-en">QR Code</span>
-          <span class="lang-fa">کیوآرکد</span>
-        </p>
-        <div class="placeholder-box" aria-label="QR Code placeholder">
-          <!-- Replace with <img src="path-to-qr-code.png" alt="QR Code"> when available -->
+          <!-- Replace with <img src="..." alt="Certificate Image"> when available -->
         </div>
       </div>
 
