@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frequently Asked Questions about Tensor Academy — certificate verification, enrollment, certificates, and more.">
+  <title>FAQ — Tensor Academy</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/images/logo/logo.png" type="image/png">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo/logo.png" alt="Tensor Academy Logo" width="130" height="auto">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="founder.html">Founder</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="verify.html">Verify Certificate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p class="section-subtitle">Find quick answers to common questions about Tensor Academy.</p>
+      </div>
+    </section>
+
+    <section class="section section-bg-light">
+      <div class="container" style="max-width: 800px; margin: 0 auto;">
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>1. How can I verify a certificate?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Visit the <a href="verify.html">Certificate Verification</a> page, enter the Certificate ID printed on your certificate, and click Verify. If the certificate is valid, its details will appear instantly.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>2. Are the courses fully online?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, all Tensor Academy programs are fully online. You can study from anywhere at your own pace within the structured learning path.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>3. How do I enroll in a program?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>You can enroll by contacting us through any of the official channels listed on the <a href="contact.html">Contact</a> page. We will guide you through the enrollment process.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>4. Do all programs include a certificate?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, upon successful completion of a program, you receive a verifiable certificate with a unique Certificate ID.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>5. How can I contact the academy?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>You can reach us via email at tensor.ai.academy@gmail.com, on X (@Tensor_Academy), Discord (tensor_academy), or LinkedIn. Full details are on the <a href="contact.html">Contact</a> page.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-text">&copy; 2026 Tensor Academy. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="academic-integrity.html">Academic Integrity</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle('active');
+        const icon = question.querySelector('.faq-icon');
+        icon.textContent = faqItem.classList.contains('active') ? '−' : '+';
+      });
+    });
+  </script>
+
+</body>
+</html>
