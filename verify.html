@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Verify a Tensor Academy certificate using its unique Certificate ID.">
+  <title>Certificate Verification — Tensor Academy</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/images/logo/logo.png" type="image/png">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo/logo.png" alt="Tensor Academy Logo" width="130" height="auto">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="founder.html">Founder</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="verify.html" class="active">Verify Certificate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container text-center">
+        <h1>Certificate Verification</h1>
+        <p>Verify a Tensor Academy certificate using its unique ID.</p>
+      </div>
+    </section>
+
+    <section class="section section-bg-light">
+      <div class="container">
+        <div class="verify-form">
+          <input type="text" id="certIdInput" placeholder="Enter Certificate ID" aria-label="Certificate ID">
+          <button type="submit" id="verifyBtn" class="btn verify-cert-btn">Verify Certificate</button>
+          <p id="errorMsg" style="color: #dc2626; margin-top: 0.8rem; display: none;"></p>
+        </div>
+
+        <!-- Certificate result (hidden initially) -->
+        <div id="certResult" class="cert-result hidden">
+          <h3>Certificate Verified</h3>
+          <table class="cert-table" style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+            <tr><td><strong>Student Name</strong></td><td id="studentName"></td></tr>
+            <tr><td><strong>Father's Name</strong></td><td id="fatherName"></td></tr>
+            <tr><td><strong>Program Name</strong></td><td id="programName"></td></tr>
+            <tr><td><strong>Certificate ID</strong></td><td id="certId"></td></tr>
+            <tr><td><strong>Certificate Number</strong></td><td id="certNumber"></td></tr>
+            <tr><td><strong>Level</strong></td><td id="level"></td></tr>
+            <tr><td><strong>Instructor</strong></td><td id="instructor"></td></tr>
+            <tr><td><strong>Start Date</strong></td><td id="startDate"></td></tr>
+            <tr><td><strong>End Date</strong></td><td id="endDate"></td></tr>
+            <tr><td><strong>Issue Date</strong></td><td id="issueDate"></td></tr>
+            <tr><td><strong>Score</strong></td><td id="score"></td></tr>
+            <tr><td><strong>Grade</strong></td><td id="grade"></td></tr>
+            <tr><td><strong>Status</strong></td><td style="color: #16a34a; font-weight: 600;" id="statusText"></td></tr>
+          </table>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="assets/documents/certificate/certificate.pdf" target="_blank" class="btn btn-outline">Preview Certificate (PDF)</a>
+            <a href="assets/documents/certificate/certificate.pdf" download class="btn btn-secondary">Download Certificate</a>
+          </div>
+        </div>
+
+        <!-- Student Profile (hidden initially, shown after verification) -->
+        <div id="studentProfile" class="student-profile-box">
+          <h2>Student Profile</h2>
+          <div class="founder-profile" style="margin-top: 1.5rem;">
+            <div class="founder-photo">
+              <img src="assets/images/student/student-profile.jpg" alt="Student Photo" width="200" height="auto">
+            </div>
+            <div class="founder-details">
+              <p><strong>Full Name:</strong> Mohammad Fazel Masjedi</p>
+              <p><strong>Father's Name:</strong> Ghulam Farooq Masjedi</p>
+              <p><strong>Student ID:</strong> TA-2026-FAZEL-DL-211</p>
+              <p><strong>Program:</strong> Deep Learning: From Fundamentals to Applications</p>
+              <p><strong>Status:</strong> Graduated</p>
+              <p><strong>Certificate Verification Status:</strong> Verified</p>
+            </div>
+          </div>
+          <h3 style="margin-top: 2rem;">Special Achievements</h3>
+          <ul class="achievements-list">
+            <li>Built Dr. Zaka AI Chatbot</li>
+            <li>Ranked 8th in the Tensor Top Prompt Engineer Competition</li>
+            <li>Built a Machine Learning-based Real Estate Price Prediction System</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-text">&copy; 2026 Tensor Academy. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="academic-integrity.html">Academic Integrity</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/verify.js"></script>
+  <script>
+    // Mobile menu toggle (same as other pages)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
